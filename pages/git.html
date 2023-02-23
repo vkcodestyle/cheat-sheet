@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="flexbox, flex, cheatsheet, cheat sheet, documentation"/>
+  <meta name="theme-color" content="#e6ebe0"/>
+
+  <link rel="apple-touch-icon" href="../img/icon.png">
+  <!-- Main style -->
+  <link rel="stylesheet" href="../css/git.min.css">
+  <title>Git</title>
+</head>
+<body class="color-scheme-git">
+<div class="git">
+  <div class="git__top-bg"></div>
+  <div class="container">
+    <div class="row">
+      <ul class="content__menu">
+        <li class="content__item"><a class="content__link" href="../index.html">Home</a></li>
+        <li class="content__item"><a class="content__link" href="../pages/flexbox.html">Flexbox</a></li>
+        <li class="content__item"><a class="content__link" href="../pages/grid.html">Grid css</a></li>
+        <li class="content__item"><a class="content__link active" href="#">Github</a></li>
+      </ul>
+      <div class="git__content">
+        <h1 class="git__title">Git Шпаргалка</h1>
+        <div class="git__content-wrap">
+          <div class="col">
+            <h2 class="git__content-title">Установка Git</h2>
+            <p>GitHub предоставляет оконное приложение с графическим интерфейсом для выполнения основных операций с репозиторием, и консольную версию Git с автоматическими обновлениями для расширенных сценариев работы.</p>
+
+            <h2 class="git__content-title">GitHub Desktop</h2>
+            <p><a class="git__link" href="https://desktop.github.com">desktop.github.com</a></p>
+            <p>Дистрибутивы Git для систем Linux и POSIX доступны на официальном сайте Git SCM.</p>
+
+            <h2 class="git__content-title">Git для всех платформ</h2>
+            <p><a class="git__link" href="https://git-scm.com">git-scm.com</a></p>
+
+            <h2 class="git__content-title">Первоначальная настройка</h2>
+            <p>Настройка информации о пользователе для всех локальных репозиториев</p>
+            <p><code class="git__code-style">$ git config --global user.name "[имя]"</code></p>
+            <p>Устанавливает имя, которое будет отображаться в поле автора у выполняемых вами коммитов</p>
+            <p><code class="git__code-style">$ git config --global user.email "[адрес электронной почты]"</code></p>
+            <p>Устанавливает адрес электронной почты, который будет отображаться в информации о выполняемых вами коммитах</p>
+
+            <h2 class="git__content-title">Создание репозитория</h2>
+            <p>Создание нового репозитория или получение его по существующему URL-адресу</p>
+            <p><code class="git__code-style">$ git init [название проекта]</code></p>
+            <p>Создаёт новый локальный репозиторий с заданным именем</p>
+            <p><code class="git__code-style">$ git clone [url-адрес]</code></p>
+            <p>Скачивает репозиторий вместе со всей его историей изменений</p>
+          </div>
+
+          <div class="col">
+            <h2 class="git__content-title">Внесение изменений</h2>
+            <p>Просмотр изменений и создание коммитов (фиксация изменений)</p>
+            <p><code class="git__code-style">$ git status</code></p>
+            <p>Перечисляет все новые или изменённые файлы, которые нуждаются в фиксации</p>
+            <p><code class="git__code-style">$ git diff</code></p>
+            <p>Показывает различия по внесённым изменениям в ещё не проиндексированных файлах</p>
+            <p><code class="git__code-style">$ git add [файл]</code></p>
+            <p>Индексирует указанный файл для последующего коммита</p>
+            <p><code class="git__code-style">$ git diff --staged</code></p>
+            <p>Показывает различия между проиндексированной и последней зафиксированной версиями файлов</p>
+            <p><code class="git__code-style">$ git reset [файл]</code></p>
+            <p>Отменяет индексацию указанного файла, при этом сохраняет его содержимое</p>
+            <p><code class="git__code-style">$ git commit -m "[сообщение с описанием]"</code></p>
+            <p>Фиксирует проиндексированные изменения и сохраняет их в историю версий</p>
+
+            <h2 class="git__content-title">Коллективная работа</h2>
+            <p>Именованные серии коммитов и соединение результатов работы</p>
+            <p><code class="git__code-style">$ git branch</code></p>
+            <p>Список именованных веток коммитов с указанием выбранной ветки</p>
+            <p><code class="git__code-style">$ git branch [имя ветки]</code></p>
+            <p>Создаёт новую ветку</p>
+            <p><code class="git__code-style">$ git switch -c [имя ветки]</code></p>
+            <p>Переключается на выбранную ветку и обновляет рабочую директорию до её состояния</p>
+            <p><code class="git__code-style">$ git merge [имя ветки]</code></p>
+            <p>Вносит изменения указанной ветки в текущую ветку</p>
+            <p><code class="git__code-style">$ git branch -d [имя ветки]</code></p>
+            <p>Удаляет выбранную ветку</p>
+          </div>
+          <div class="col">
+            <h2 class="git__content-title">Операции с файлами</h2>
+            <p>Перемещение и удаление версий файлов репозитория</p>
+            <p><code class="git__code-style">$ git rm [файл]</code></p>
+            <p>Удаляет конкретный файл из рабочей директории и индексирует его удаление</p>
+            <p><code class="git__code-style">$ git rm --cached [файл]</code></p>
+            <p>Убирает конкретный файл из контроля версий, но физически оставляет его на своём месте</p>
+            <p><code class="git__code-style">$ git mv [оригинальный файл] [новое имя]</code></p>
+            <p>Перемещает и переименовывает указанный файл, сразу индексируя его для последующего коммита</p>
+
+            <h2 class="git__content-title">Игнорирование некоторых файлов</h2>
+            <p>Исключение временных и вторичных файлов и директорий</p>
+            <p class="git__code-style-bg"><code class="git__code-style">*.log<br>build/<br>temp-*</code></p>
+            <p>Git будет игнорировать файлы и директории, перечисленные в файле <code class="git__code-style">.gitignore</code> с помощью wildcard синтаксиса</p>
+            <p><code class="git__code-style">$ git ls-files --others --ignored --exclude-standard</code></p>
+            <p>Список всех игнорируемых файлов в текущем проекте</p>
+
+            <h2>Сохранение фрагментов</h2>
+            <p>Сохранение и восстановление незавершённых изменений</p>
+            <p><code class="git__code-style">$ git stash</code></p>
+            <p>Временно сохраняет все незафиксированные изменения отслеживаемых файлов</p>
+            <p><code class="git__code-style">$ git stash pop</code></p>
+            <p>Восстанавливает состояние ранее сохранённых версий файлов</p>
+            <p><code class="git__code-style">$ git stash list</code></p>
+            <p>Выводит список всех временных сохранений</p>
+            <p><code class="git__code-style">$ git stash drop</code></p>
+            <p>Сбрасывает последние временно сохраненные изменения</p>
+          </div>
+
+          <div class="col">
+            <h2 class="git__content-title">Просмотр истории</h2>
+            <p>Просмотр и изучение истории изменений файлов проекта</p>
+            <p><code class="git__code-style">$ git log</code></p>
+            <p>История коммитов для текущей ветки</p>
+            <p><code class="git__code-style">$ git log --follow [файл]</code></p>
+            <p>История изменений конкретного файла, включая его переименование</p>
+            <p><code class="git__code-style">$ git diff [первая ветка]...[вторая ветка]</code></p>
+            <p>Показывает разницу между содержанием коммитов двух веток</p>
+            <p><code class="git__code-style">$ git show [коммит]</code></p>
+            <p>Выводит информацию и показывает изменения в выбранном коммите</p>
+
+            <h2 class="git__content-title">Откат коммитов</h2>
+            <p>Удаление ошибок и корректировка созданной истории</p>
+            <p><code class="git__code-style">$ git reset [коммит]</code></p>
+            <p>Отменяет все коммиты после заданного, оставляя все изменения в рабочей директории</p>
+            <p><code class="git__code-style">$ git reset --hard [коммит]</code></p>
+            <p>Сбрасывает всю историю вместе с состоянием рабочей директории до указанного коммита.</p>
+
+            <h2>Синхронизация с удалённым репозиторием</h2>
+            <p>Регистрация удалённого репозитория и обмен изменениями</p>
+            <p><code class="git__code-style">$ git fetch [удалённый репозиторий]</code></p>
+            <p>Скачивает всю историю из удалённого репозитория</p>
+            <p><code class="git__code-style">$ git merge [удалённый репозиторий]/[ветка]</code></p>
+            <p>Вносит изменения из ветки удалённого репозитория в текущую ветку локального репозитория</p>
+            <p><code class="git__code-style">$ git push [удалённый репозиторий] [ветка]</code></p>
+            <p>Загружает все изменения локальной ветки в удалённый репозиторий</p>
+            <p><code class="git__code-style">$ git pull</code></p>
+            <p>Загружает историю из удалённого репозитория и объединяет её с локальной. pull = fetch + merge</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

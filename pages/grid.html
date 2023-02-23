@@ -1,0 +1,2244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="flexbox, flex, cheatsheet, cheat sheet, documentation"/>
+  <meta name="theme-color" content="#e6ebe0"/>
+
+  <link rel="apple-touch-icon" href="../img/icon.png">
+  <!-- Main style -->
+  <link rel="stylesheet" type="text/css" href="../css/grid.min.css">
+  <title>Grid Css</title>
+</head>
+<body class="color-scheme-flexbox">
+<!-- wrapper -->
+<div class="wrapper">
+
+  <!-- sidebar -->
+  <div class="sidebar">
+    <div class="sidebar__btn sidebar--angle-right">
+      <i class="fa fa-angle-right"></i>
+    </div>
+    
+    <div class="sidebar__menu">
+
+      <h3 class="sidebar__title">Establishing grid containers</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="#display" class="sidebar__link active">display</a>
+        </li>
+      </ul>
+
+      <h3 class="sidebar__title">Defining the grid</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="#grid-template-rows" class="sidebar__link">grid-template-rows</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-template-columns" class="sidebar__link">grid-template-columns</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#track-list-values" class="sidebar__link">track list values</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#named-lines" class="sidebar__link">named lines</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#repeat" class="sidebar__link">repeat()</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-auto-rows" class="sidebar__link">grid-auto-rows</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-auto-columns" class="sidebar__link">grid-auto-columns</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-auto-flow" class="sidebar__link">grid-auto-flow</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-template-areas" class="sidebar__link">grid-template-areas</a>
+        </li>
+      </ul>
+
+      <h3 class="sidebar__title">Placing Grid Items</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="#grid-row-start" class="sidebar__link">grid-row-start</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-row-end" class="sidebar__link">grid-row-end</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-column-start" class="sidebar__link">grid-column-start</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-column-end" class="sidebar__link">grid-column-end</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-row" class="sidebar__link">grid-row</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-column" class="sidebar__link">grid-column</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#grid-area" class="sidebar__link">grid-area</a>
+        </li>
+      </ul>
+
+      <h3 class="sidebar__title">Alignment</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="#justify-self" class="sidebar__link">justify-self</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#justify-items" class="sidebar__link">justify-items</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#align-self" class="sidebar__link">align-self</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#align-items" class="sidebar__link">align-items</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#justify-content" class="sidebar__link">justify-content</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#align-content" class="sidebar__link">align-content</a>
+        </li>
+      </ul>
+
+      <h3 class="sidebar__title">Spacing</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="#row-gap" class="sidebar__link">row-gap</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#column-gap" class="sidebar__link">column-gap</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#gap" class="sidebar__link">gap</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <!-- sidebar : end -->
+
+  <!-- content -->
+  <div class="content">
+    <ul class="content__menu">
+      <li class="content__item"><a href="../index.html" class="content__link">Home</a></li>
+      <li class="content__item"><a href="../pages/flexbox.html" class="content__link">Flexbox</a></li>
+      <li class="content__item"><a href="../pages/grid.html" class="content__link active">Grid css</a></li>
+      <li class="content__item"><a href="../pages/git.html" class="content__link">Github</a></li>
+    </ul>
+    <!-- display -->
+    <section class="section">
+      <div id="display" class="section__wrap-title">
+        <h2 class="section__title">display</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#grid-containers" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#grid-containers</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="display">grid</button>
+        <button class="section__control" type="button" data-flex="display">inline-grid</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--display">
+          Some text
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop"><mark class="section__mark">display: grid;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p><strong>display: </strong>Включает grid свойство для элемента. Под это свойство попадает сам элемент и вложенные в него элементы: затрагиваются только потомки первого уровня - они станут элементами grid контейнера.</p>
+          <p><strong>Применяется ко: </strong>всем элементам.</p>
+          <dl>
+            <dt>grid</dt>
+            <dd>элемент растягивается на всю ширину и имеет свое полное пространство среди окружающих блоков. Происходит перенос строк в начале и в конце блока.</dd>
+            <dt>inline-grid</dt>
+            <dd>элемент обтекается другими элементами. При этом его внутренняя часть форматируется как блочный элемент, а сам элемент — как встроенный.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>A grid container establishes a new <a class="section__tab-link" href="https://www.w3.org/TR/css-grid-1/#grid">grid</a> formatting context for its contents. This is the same as establishing a block formatting context, except that grid layout is used instead of block layout: floats do not intrude into the grid container, and the grid container’s margins do not collapse with the margins of its contents. The contents of a grid container are laid out into a grid, with
+            <a class="section__tab-link" href="https://www.w3.org/TR/css-grid-1/#grid-line">grid lines</a> forming the boundaries of each
+            <a class="section__tab-link" href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> containing block. The
+            <a class="section__tab-link" href="https://www.w3.org/TR/css-overflow-3/#overflow">overflow</a> property applies to grid containers.</p>
+          <p><strong>Applies to</strong>: all elements.</p>
+          <dl>
+            <dt>grid</dt>
+            <dd>This value causes an element to generate a block-level grid container box.</dd>
+            <dt>inline-grid</dt>
+            <dd>This value causes an element to generate an inline-level grid container box.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- display : end -->
+    <hr>
+    <!-- grid-template-rows -->
+    <section class="section">
+      <div id="grid-template-rows" class="section__wrap-title">
+        <h2 class="section__title">grid-template-rows</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-template-rows" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-template-rows</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-template-rows">1fr 1fr</button>
+        <button class="section__control" type="button" data-flex="grid-template-rows">1fr 150px</button>
+        <button class="section__control" type="button" data-flex="grid-template-rows">repeat(2, 2fr  1fr)</button>
+        <button class="section__control" type="button" data-flex="grid-template-rows">none</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-template-rows">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template-columns: repeat(3, 1fr);</div>
+          <div class="section__prop"><mark class="section__mark">grid-template-rows: 1fr 1fr;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p><strong>grid-template-rows, grid-template-columns - </strong>Указывают из скольки рядов (строк) и скольки колонок состоит сетка и какие у них размеры. Т.е. указывается сразу два понятия: сколько и какой размер.</p>
+          <p>В значении через пробелы указываются размеры: высота ряда (rows) или ширина колонки (columns). Сколько раз будет указан размер, столько будет рядов/колонок.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>grid-template-rows, grid-template-columns - Indicate how many rows (rows) and how many columns the grid consists of and what their sizes are. I.e., two concepts are specified at once: how many and what size.</p>
+          <p>The dimensions are indicated in the value separated by spaces: row height (rows) or column width (columns). How many times the size will be specified, how many rows/columns there will be.</p>
+        </div>
+      </div>
+    </section>
+    <!-- grid-template-rows : end -->
+    <hr>
+    <!-- grid-template-columns -->
+    <section class="section">
+      <div id="grid-template-columns" class="section__wrap-title">
+        <h2 class="section__title">grid-template-columns</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#track-sizing" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#track-sizing</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-template-columns">1fr 1fr</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">1fr 2fr</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">50px 100px 1fr</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">repeat(2, 1fr auto)</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">none</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-template-columns">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop"><mark class="section__mark">grid-template-columns: 1fr 1fr;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- grid-template-columns : end -->
+    <hr>
+    <!-- track list value -->
+    <section class="section">
+      <div id="track-list-values" class="section__wrap-title">
+        <h2 class="section__title">track-list-values</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#valdef-grid-template-columns-length-percentage" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#valdef-grid-template-columns-length-percentage</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-template-columns">100px 40%</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">10% 30% 50% 10%</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">1fr 3fr</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">1fr auto</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">repeat(7, 1fr)</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">repeat(3, 1fr auto)</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">1fr, minmax(min-content, 3fr)</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">2fr max-content</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--track-list-values">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">align-items: flex-start;</div>
+          <div class="section__prop"><mark class="section__mark">grid-template-columns: 100px 40%;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <dl>
+            <dt>auto</dt>
+            <dd>размер ряда/колонки подстраивается под размеры элементов, так, чтобы уместился самый большой из них. Не дает сжиматься меньше min-width или min-height самого широкого или высокого элемента соответственно. Не дает растягиваться больше, чем max-content. Если в контейнере есть свободное место, то размер может растянуться до конца контейнера.</dd>
+            <dt>px, em, %, vh, vw</dt>
+            <dd>размер абсолютный (px, pt), относительный (em, vw, vh) или в % от ширины/высоты контейнера.</dd>
+            <dt>fr</dt>
+            <dd>(фракция - свободное место в сетке) — специальная единица измерения в grid. Свободное место в контейнере делится на фракции, так если одной колонке указать 1fr, а другой 2fr, то вторая будет больше первой в 2 раза и обе они заполнят все свободное пространство. Аналог flex-grow: у флексов. Тут можно также указывать дробные значения: 0.5fr, 2.3fr.</dd>
+            <dt>min-content</dt>
+            <dd>наименьший размер контента. Для текста это ширина самого длинного слова или неразрывного фрагмента.</dd>
+            <dt>max-content</dt>
+            <dd>наибольший размер контента. Для текста это длина самой большой строки без переносов.</dd>
+            <dt>fit-content( max )</dt>
+            <dd>функция которой передается макс. размер. Если контент меньше этого размера, ведет себя как auto, если больше, то ограничивает размер ряда/колонки до указанного в параметре max.</dd>
+            <dt>minmax( min, max )</dt>
+            <dd>функция, позволяет разом указать минимальный и максимальный размер.</dd>
+            <dt>line-name (имя линии)</dt>
+            <dd>перед размером можно указать (создать) имя для линии (ряда/колонки). Имя указывается в квадратных скобках [имя] 100px. Также можно указать сразу несколько имен через пробел внутри квадратных скобок: [имя еще_имя] 100px. Символы в имени можно использовать любые, в том числе кириллицу.</dd>
+            <dt>last-name (последнее имя)</dt>
+            <dd>указанное имя станет именем начальной линии ряда/колонки, но ряд/колонка состоит из двух линий (они ведь имеют размер). Так имя линии является именем начала одной колонки (ряда) и именем конца предыдущей колонки (ряда). И так вот заполняется сетка, но в конце остается ряд/колонка и указанное для неё имя это имя только начальной линии этого ряда/колонки, а у конечной линии имени нет. Такое имя последней линии можно указать в конце. Т.е. получается так: [имя] 100px [имя2] 100px [последнее-имя].</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <dl>
+            <dt>length-percentage</dt>
+            <dd>A non-negative length or percentage, as defined by CSS3 Values. [CSS3VAL]
+              <a class="section__tab-link" href="https://www.w3.org/TR/css3-values/#percentage-value">percentage</a> values are relative to the
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#inline-size">inline size</a> of the grid container in column grid tracks, and the
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#block-size">block size</a> of the grid container in row grid tracks. If the size of the grid container depends on the size of its tracks, then the
+              <a class="section__tab-link" href="https://www.w3.org/TR/css3-values/#percentage-value"> percentage</a> must be treated as auto, for the purpose of calculating the intrinsic sizes of the grid container and then resolve against that resulting grid container size for the purpose of laying out the
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-grid-1/#grid">grid</a> and its items.</dd>
+            <dt>flex</dt>
+            <dd>A non-negative dimension with the unit <a class="section__tab-link" href="https://www.w3.org/TR/css-grid-1/#valdef-flex-fr">fr</a> specifying the track’s
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-grid-1/#typedef-flex">flex</a> factor. Each flex-sized track takes a share of the remaining space in proportion to its flex factor. See
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-grid-1/#fr-unit">Flexible Lengths</a> for more details.</dd>
+            <dt>max-content</dt>
+            <dd>Represents the largest <a class="section__tab-link" href="https://www.w3.org/TR/css-sizing-3/#max-content-contribution">max-content contribution</a> of the
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> occupying the <a class="section__tab-link"
+                                                                                                                         href="https://www.w3.org/TR/css-grid-1/#grid-track">grid track</a>.</dd>
+            <dt>min-content</dt>
+            <dd>Represents the largest <a class="section__tab-link" href="https://www.w3.org/TR/css-sizing-3/#min-content-contribution">min-content</a> contribution of the
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-grid-1/#grid-item">grid items</a> occupying the <a class="section__tab-link"
+                                                                                                                         href="https://www.w3.org/TR/css-grid-1/#grid-track">grid track</a>.</dd>
+            <dt>minmax(min, max)</dt>
+            <dd>Defines a size range greater than or equal to and less than or equal to . If < , then is ignored and is treated as . As a maximum, a flex value sets the track’s flex factor; it is invalid as a minimum. minmaxmaxminmaxminmax(min,max)min</dd>
+            <dt>auto</dt>
+            <dd>As a maximum, identical to max-content. As a minimum, represents the largest minimum size (as specified by min-width/min-height) of the grid items occupying the grid track.</dd>
+            <dt>fit-content(length-percentage)</dt>
+            <dd>Represents the formula , which is calculated like , except that the track size is clamped at if it is greater than the auto minimum.min(max-content, max(auto, argument))minmax(auto, max-content)argument</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- track list value : end -->
+    <hr>
+    <!-- named lines -->
+    <section class="section">
+      <div id="named-lines" class="section__wrap-title">
+        <h2 class="section__title">named lines</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#named-lines" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#named-lines</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-template-columns">[first nav-start] 150px [main-start] 1fr [last]</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">[first nav-start] 150px [main-start] 3fr [main-end aside-start] 1fr
+          [last]</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--named-lines">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop"><mark class="section__mark">grid-template-columns: [first nav-start] 150px [main-start] 1fr [last];</mark></div>
+          <div class="section__prop">grid-template-rows: [first header-start] 50px [main-start] 1fr [footer-start] 50px [last];</div>
+          }
+          <br>
+          <br>
+          .child.nth-child(1) {
+          <div class="section__prop">grid-column: first / last;</div>
+          }
+          <br>
+          <br>
+          .child.nth-child(2) {
+          <div class="section__prop">grid-row: main-start / last;</div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Линии могут быть явно названы в свойствах grid-template-rows и grid-template-columns или неявно названы путем создания именованных областей сетки со свойством grid-template-areas.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>While <a class="section__link-title" href="https://www.w3.org/TR/css-grid-1/#grid-line">grid lines</a> can always be referred to by their numerical index, named lines can make the grid-placement properties easier to understand and maintain. Lines can be explicitly named in the grid-template-rows and grid-template-columns properties, or implicitly named by creating named grid areas with the grid-template-areas property.</p>
+        </div>
+      </div>
+    </section>
+    <!-- named lines : end -->
+    <hr>
+    <!-- repeat -->
+    <section class="section">
+      <div id="repeat" class="section__wrap-title">
+        <h2 class="section__title">repeat()</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#repeat-notation" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#repeat-notation</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-template-columns">repeat(5, 1fr)</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">repeat(auto-fill, minmax(75px, 1fr))</button>
+        <button class="section__control" type="button" data-flex="grid-template-columns">repeat(auto-fit, minmax(75px, 1fr));</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--repeat">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop"><mark class="section__mark">grid-template-columns: repeat(5, 1fr);</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <dl>
+            <dt>repeat() — функция</dt>
+            <dd>Позволяет повторять что-либо N раз. Используется при создании колонок/рядов в свойствах: grid-template-rows:, grid-template-columns:, grid-template:.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The repeat() notation represents a repeated fragment of the track list, allowing a large number of columns or rows that exhibit a recurring pattern to be written in a more compact form.</p>
+          <p>The generic form of the repeat() syntax is, approximately,</p>
+          <p><code><strong>repeat( [ positive-integer | auto-fill | auto-fit ], track-list )</strong></code></p>
+        </div>
+      </div>
+    </section>
+    <!-- repeat : end -->
+    <hr>
+    <!-- grid-auto-rows -->
+    <section class="section">
+      <div id="grid-auto-rows" class="section__wrap-title">
+        <h2 class="section__title">grid-auto-rows</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-auto-rows" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-auto-rows</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-auto-rows">100px</button>
+        <button class="section__control" type="button" data-flex="grid-auto-rows">150px</button>
+        <button class="section__control" type="button" data-flex="grid-auto-rows">1fr</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-auto-rows">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template-rows: 50px;</div>
+          <div class="section__prop"><mark class="section__mark">grid-auto-rows: 100px;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Устанавливает размер для авто-создаваемых (неявных) рядов/колонок.
+            Колонки/ряды создаются автоматически, когда в сетке элементов больше чем помещается в определенные ряды/колонки (ячейки) или когда элемент размещается за пределы указанной сетки.</p>
+          <dl>
+            <dt>grid-auto-rows</dt>
+            <dd>Устанавливает размер для авто-создаваемых (неявных) рядов</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Sets the size for auto-created (implicit) rows/columns. Columns/rows are created automatically when there are more elements in the grid than fit into certain rows/columns (cells) or when an element is placed outside the specified grid.</p>
+          <dl>
+            <dt>grid-auto-rows</dt>
+            <dd>Sets the size for auto-created (implicit) rows</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- grid-auto-rows : end -->
+    <hr>
+    <!-- grid-auto-columns -->
+    <section class="section">
+      <div id="grid-auto-columns" class="section__wrap-title">
+        <h2 class="section__title">grid-auto-columns</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-auto-columns" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-auto-columns</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-auto-columns">75px</button>
+        <button class="section__control" type="button" data-flex="grid-auto-columns">150px</button>
+        <button class="section__control" type="button" data-flex="grid-auto-columns">1fr</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-auto-columns">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template-columns: 50px;</div>
+          <div class="section__prop"><mark class="section__mark">grid-auto-columns: 75px;</mark></div>
+          <div class="section__prop">grid-auto-flow: column;</div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Устанавливает размер для авто-создаваемых (неявных) рядов/колонок. Колонки/ряды создаются автоматически, когда в сетке элементов больше чем помещается в определенные ряды/колонки (ячейки) или когда элемент размещается за пределы указанной сетки.</p>
+          <dl>
+            <dt>grid-auto-columns</dt>
+            <dd>Устанавливает размер для авто-создаваемых (неявных) колонок</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Sets the size for auto-created (implicit) rows/columns. Columns/rows are created automatically when there are more elements in the grid than fit into certain rows/columns (cells) or when an element is placed outside the specified grid.</p>
+          <dl>
+            <dt>grid-auto-columns</dt>
+            <dd>Sets the size for auto-created (implicit) columns</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- grid-auto-columns : end -->
+    <hr>
+    <!-- grid-auto-flow -->
+    <section class="section">
+      <div id="grid-auto-flow" class="section__wrap-title">
+        <h2 class="section__title">grid-auto-flow</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-auto-flow" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-auto-flow</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-auto-flow">row</button>
+        <button class="section__control" type="button" data-flex="grid-auto-flow">row dense</button>
+        <button class="section__control" type="button" data-flex="grid-auto-flow">column</button>
+        <button class="section__control" type="button" data-flex="grid-auto-flow">column dense</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-auto-flow">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template-columns: repeat(4, 1fr)</div>
+          <div class="section__prop">grid-template-rows: repeat(4, 1fr);</div>
+          <div class="section__prop"><mark class="section__mark">grid-auto-flow: row;</mark></div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop">grid-column: span 3;</div>
+          <div class="section__prop">grid-row: span 3;</div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Определяет логику добавления элементов в пустые ячейки.</p>
+          <p>Когда элементам конкретно не указано в какой ячейке (области) они должны быть расположены, то они размещаются в пустые ячейки. По умолчанию заполнение идет слева направо (→) до конца ряда, переход на следующий ряд и опять заполнение (похоже на то как мы читаем текст).</p>
+          <p>По умолчанию алгоритм row т.е. такой → ↓ →, можно сделать так ↓ → ↓.</p>
+          <p><strong>Применяется к: </strong>grid контейнеру.</p>
+          <p><strong>Значение по умолчанию: </strong>row.</p>
+          <dl>
+            <dt>row (default)</dt>
+            <dd>расставляет элементы в сетке по рядам → ↓ →. Добавляет ряды если в сетке нет места.</dd>
+            <dt>column</dt>
+            <dd>расставляет элементы в сетке по колонкам ↓ → ↓. Добавляет колонки если в сетке нет места.</dd>
+            <dt>dense </dt>
+            <dd>включает «dense» алгоритм заполнения, который пытается разместить элементы так, чтобы не оставалось пустых пространств (по умолчанию работает алгоритм «sparse»). При этом элементы могут располагаться не по-порядку. При вставке каждого следующего элемента, алгоритм проверяет нет ли пустой ячейки сзади куда может поместиться текущий элемент, если есть, помещает его туда а не в следующую ячейку. dense имеет смысл только при наличии областей в сетке - это когда элементу указано разместиться сразу в несколько ячеек (через span), тогда он как правило не помещается в одну ячейку и остается пустое место.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p><a class="section-link" href="https://www.w3.org/TR/css-grid-1/#grid-item">Grid items</a> that aren’t explicitly placed are automatically placed into an unoccupied space in the grid container by the
+            <a class="section-link" href="https://www.w3.org/TR/css-grid-1/#grid-item-placement-algorithm">auto-placement algorithm</a>. grid-auto-flow controls how the auto-placement algorithm works, specifying exactly how auto-placed items get flowed into the grid. See §8.5 Grid Item Placement Algorithm for details on precisely how the auto-placement algorithm works.</p>
+          <p><strong>Applies to: </strong>grid containers.</p>
+          <p><strong>Initial: </strong>row.</p>
+          <dl>
+            <dt>row</dt>
+            <dd>The <a class="section-link" href="https://www.w3.org/TR/css-grid-1/#grid-item-placement-algorithm">auto-placement algorithm</a> places items by filling each row in turn, adding new rows as necessary. If neither row nor column is provided, row is assumed.</dd>
+            <dt>column</dt>
+            <dd>The auto-placement algorithm places items by filling each column in turn, adding new columns as necessary.</dd>
+            <dt>dense</dt>
+            <dd>If specified, the auto-placement algorithm uses a “dense” packing algorithm, which attempts to fill in holes earlier in the grid if smaller items come up later. This may cause items to appear out-of-order, when doing so would fill in holes left by larger items.
+              If omitted, a “sparse” algorithm is used, where the placement algorithm only ever moves “forward” in the grid when placing items, never backtracking to fill holes. This ensures that all of the auto-placed items appear “in order”, even if this leaves holes that could have been filled by later items.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- grid-auto-flow : end -->
+    <hr>
+    <!-- grid-template-areas -->
+    <section class="section">
+      <div id="grid-template-areas" class="section__wrap-title">
+        <h2 class="section__title">grid-template-areas</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#grid-template-areas-property" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#grid-template-areas-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-template-areas">"head head" "aside main" "foot foot"</button>
+        <button class="section__control" type="button" data-flex="grid-template-areas">"head aside" "main main" "foot foot"</button>
+        <button class="section__control" type="button" data-flex="grid-template-areas">"head aside" "main aside" "foot aside"</button>
+        <button class="section__control" type="button" data-flex="grid-template-areas">"head" "main" "aside" "foot"</button>
+        <button class="section__control" type="button" data-flex="grid-template-areas">none</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-template-areas">
+          <div class="section__parent">
+            <div class="section__child header">header</div>
+            <div class="section__child main">main</div>
+            <div class="section__child aside">aside</div>
+            <div class="section__child footer">footer</div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop"><mark class="section__mark">grid-template-areas:
+            "head head"
+            "aside main"
+            "foot foot";</mark></div>
+          }
+          <br>
+          <br>
+          .child.header {
+          <div class="section__prop">grid-area: head;</div>
+          }
+          <br>
+          <br>
+          .child.aside {
+          <div class="section__prop">grid-area: aside;</div>
+          }
+          <br>
+          <br>
+          .child.main {
+          <div class="section__prop">grid-area: main;</div>
+          }
+          <br>
+          <br>
+          .child.footer {
+          <div class="section__prop">grid-area: foot;</div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Позволяет создать визуальный шаблон сетки. В этом свойстве задаются имена ячейкам, а затем элементы привязываются к этим именам через свойство grid-area: указываемое для отдельного элемента.</p>
+          <p><strong>Применяется к: </strong>grid контейнеру.</p>
+          <p><strong>Значение по умолчанию: </strong>нет.</p>
+          <dl>
+            <dt>"имя имя2 имя3"</dt>
+            <dd> в значении внутри кавычек нужно через пробелы указывать имена. Каждые кавычки с именами будут представлять собой ряд сетки, а имена внутри кавычек задают имена ячейкам внутри этого ряда.</dd>
+            <dt>"имя имя имя2"</dt>
+            <dd>если указать одно и тоже имя несколько раз подряд, то имя объединит ячейки и мы получим область (большую ячейку). Объединять ячейки таким способом можно не только внутри ряда, но и между рядами.</dd>
+            <dt>. (точка)</dt>
+            <dd>указывается вместо имени и обозначает ячейку которую нужно пропустить (пустую ячейку). Можно использовать несколько точек подряд, пока между ними нет пробела они будут считаться за одну.</dd>
+            <dt>none</dt>
+            <dd>область не определена</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>This property specifies named grid areas, which are not associated with any particular grid item, but can be referenced from the grid-placement properties. The syntax of the grid-template-areas property also provides a visualization of the structure of the grid, making the overall layout of the grid container easier to understand.</p>
+          <p><strong>Applies to: </strong>grid containers.</p>
+          <p><strong>Initial: </strong>none.</p>
+          <dl>
+            <dt>none</dt>
+            <dd>Indicates that no named grid areas, and likewise no explicit grid tracks, are defined by this property (though explicit grid tracks could still be created by grid-template-columns or grid-template-rows).</dd>
+            <dt>string</dt>
+            <dd>A row is created for every separate string listed for the grid-template-areas property, and a column is created for each cell in the string, when parsed as follows:</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- grid-template-areas : end -->
+    <hr>
+    <!-- grid-row-start -->
+    <section class="section">
+      <div id="grid-row-start" class="section__wrap-title">
+        <h2 class="section__title">grid-row-start</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-row-start" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-row-start</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-row-start">1</button>
+        <button class="section__control" type="button" data-flex="grid-row-start">2</button>
+        <button class="section__control" type="button" data-flex="grid-row-start">3</button>
+        <button class="section__control" type="button" data-flex="grid-row-start">span 2</button>
+        <button class="section__control" type="button" data-flex="grid-row-start">a-start</button>
+        <button class="section__control" type="button" data-flex="grid-row-start">b-start</button>
+        <button class="section__control" type="button" data-flex="grid-row-start">c-start</button>
+        <button class="section__control" type="button" data-flex="grid-row-start">header-top</button>
+        <button class="section__control" type="button" data-flex="grid-row-start">main-top</button>
+        <button class="section__control" type="button" data-flex="grid-row-start">footer-top</button>
+        <button class="section__control" type="button" data-flex="grid-row-start">auto</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-row-start">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template-rows: [header-top] 1fr [header-bottom main-top] 1fr [main-bottom footer-top] 1fr [footer-bottom];</div>
+          <div class="section__prop">grid-template-columns: repeat(3, 1fr);</div>
+          <div class="section__prop">grid-template-areas:
+            "a a a"
+            "b b b"
+            "c c c";</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">grid-row-start: 1;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Указывает положение элемента в сетке. Т.е. размещает элемент в указанную ячейку. Указывать нужно имя или номер линии к которой относится ячейка и к которой нужно прикрепить элемент.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Specifies the position of the element in the grid. I.e. places the element in the specified cell. You need to specify the name or number of the line to which the cell belongs and to which you want to attach the element.</p>
+        </div>
+      </div>
+    </section>
+    <!-- grid-row-start : end -->
+    <hr>
+    <!-- grid-row-end -->
+    <section class="section">
+      <div id="grid-row-end" class="section__wrap-title">
+        <h2 class="section__title">grid-row-end</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-row-end" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-row-end</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-row-end">2</button>
+        <button class="section__control" type="button" data-flex="grid-row-end">3</button>
+        <button class="section__control" type="button" data-flex="grid-row-end">4</button>
+        <button class="section__control" type="button" data-flex="grid-row-end">span 2</button>
+        <button class="section__control" type="button" data-flex="grid-row-end">a-end</button>
+        <button class="section__control" type="button" data-flex="grid-row-end">b-end</button>
+        <button class="section__control" type="button" data-flex="grid-row-end">c-end</button>
+        <button class="section__control" type="button" data-flex="grid-row-end">header-bottom</button>
+        <button class="section__control" type="button" data-flex="grid-row-end">main-bottom</button>
+        <button class="section__control" type="button" data-flex="grid-row-end">footer-bottom</button>
+        <button class="section__control" type="button" data-flex="grid-row-end">auto</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-row-end">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template-rows: [header-top] 1fr [header-bottom main-top] 1fr [main-bottom footer-top] 1fr [footer-bottom];</div>
+          <div class="section__prop">grid-template-columns: repeat(3, 1fr);</div>
+          <div class="section__prop">grid-template-areas:
+            "a a a"
+            "b b b"
+            "c c c";</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">grid-row-end: 2;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Указывает положение элемента в сетке. Т.е. размещает элемент в указанную ячейку. Указывать нужно имя или номер линии к которой относится ячейка и к которой нужно прикрепить элемент.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Specifies the position of the element in the grid. I.e. places the element in the specified cell. You need to specify the name or number of the line to which the cell belongs and to which you want to attach the element.</p>
+        </div>
+      </div>
+    </section>
+    <!-- grid-row-end : end -->
+    <hr>
+    <!-- grid-column-start -->
+    <section class="section">
+      <div id="grid-column-start" class="section__wrap-title">
+        <h2 class="section__title">grid-column-start</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-column-start" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-column-start</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-column-start">1</button>
+        <button class="section__control" type="button" data-flex="grid-column-start">2</button>
+        <button class="section__control" type="button" data-flex="grid-column-start">3</button>
+        <button class="section__control" type="button" data-flex="grid-column-start">span 2</button>
+        <button class="section__control" type="button" data-flex="grid-column-start">a-start</button>
+        <button class="section__control" type="button" data-flex="grid-column-start">b-start</button>
+        <button class="section__control" type="button" data-flex="grid-column-start">c-start</button>
+        <button class="section__control" type="button" data-flex="grid-column-start">aside-begin</button>
+        <button class="section__control" type="button" data-flex="grid-column-start">aside2-begin</button>
+        <button class="section__control" type="button" data-flex="grid-column-start">auto</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-column-start">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template-columns: [aside-begin] 1fr [aside-end main-begin] 1fr [main-end aside2-begin] 1fr [aside2-end];</div>
+          <div class="section__prop">grid-template-rows: repeat(3, 1fr);</div>
+          <div class="section__prop">grid-template-areas:
+            "a b c"
+            "a b c"
+            "a b c";</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">grid-column-start: 1;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Указывает положение элемента в сетке. Т.е. размещает элемент в указанную ячейку. Указывать нужно имя или номер линии к которой относится ячейка и к которой нужно прикрепить элемент.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Specifies the position of the element in the grid. I.e. places the element in the specified cell. You need to specify the name or number of the line to which the cell belongs and to which you want to attach the element.</p>
+        </div>
+      </div>
+    </section>
+    <!-- grid-column-start : end -->
+    <hr>
+    <!-- grid-column-end -->
+    <section class="section">
+      <div id="grid-column-end" class="section__wrap-title">
+        <h2 class="section__title">grid-column-end</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-column-end" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-column-end</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-column-end">2</button>
+        <button class="section__control" type="button" data-flex="grid-column-end">3</button>
+        <button class="section__control" type="button" data-flex="grid-column-end">4</button>
+        <button class="section__control" type="button" data-flex="grid-column-end">span 2</button>
+        <button class="section__control" type="button" data-flex="grid-column-end">a-end</button>
+        <button class="section__control" type="button" data-flex="grid-column-end">b-end</button>
+        <button class="section__control" type="button" data-flex="grid-column-end">c-end</button>
+        <button class="section__control" type="button" data-flex="grid-column-end">aside-end</button>
+        <button class="section__control" type="button" data-flex="grid-column-end">main-end</button>
+        <button class="section__control" type="button" data-flex="grid-column-end">aside2-end</button>
+        <button class="section__control" type="button" data-flex="grid-column-end">auto</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-column-end">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template-columns: [aside-begin] 1fr [aside-end main-begin] 1fr [main-end aside2-begin] 1fr [aside2-end];</div>
+          <div class="section__prop">grid-template-rows: repeat(3, 1fr);</div>
+          <div class="section__prop">grid-template-areas:
+            "a b c"
+            "a b c"
+            "a b c";</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">grid-column-end: 2;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Указывает положение элемента в сетке. Т.е. размещает элемент в указанную ячейку. Указывать нужно имя или номер линии к которой относится ячейка и к которой нужно прикрепить элемент.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Specifies the position of the element in the grid. I.e. places the element in the specified cell. You need to specify the name or number of the line to which the cell belongs and to which you want to attach the element.</p>
+        </div>
+      </div>
+    </section>
+    <!-- grid-column-end : end -->
+    <hr>
+    <!-- grid-row -->
+    <section class="section">
+      <div id="grid-row" class="section__wrap-title">
+        <h2 class="section__title">grid-row</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-row" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-row</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-row">2</button>
+        <button class="section__control" type="button" data-flex="grid-row">1/2</button>
+        <button class="section__control" type="button" data-flex="grid-row">1/4</button>
+        <button class="section__control" type="button" data-flex="grid-row">2/4</button>
+        <button class="section__control" type="button" data-flex="grid-row">-1/-3</button>
+        <button class="section__control" type="button" data-flex="grid-row">span 2/-1</button>
+        <button class="section__control" type="button" data-flex="grid-row">1/span 2</button>
+        <button class="section__control" type="button" data-flex="grid-row">b-start</button>
+        <button class="section__control" type="button" data-flex="grid-row">a-start/b-end</button>
+        <button class="section__control" type="button" data-flex="grid-row">a-start/c-end</button>
+        <button class="section__control" type="button" data-flex="grid-row">b-start/c-end</button>
+        <button class="section__control" type="button" data-flex="grid-row">main-top</button>
+        <button class="section__control" type="button" data-flex="grid-row">header-top/main-bottom</button>
+        <button class="section__control" type="button" data-flex="grid-row">header-top/footer-bottom</button>
+        <button class="section__control" type="button" data-flex="grid-row">main-top/footer-bottom</button>
+        <button class="section__control" type="button" data-flex="grid-row">auto/auto</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-row">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template-rows: [header-top] 1fr [header-bottom main-top] 1fr [main-bottom footer-top] 1fr [footer-bottom];</div>
+          <div class="section__prop">grid-template-columns: repeat(3, 1fr);</div>
+          <div class="section__prop">grid-template-areas:
+            "a a a"
+            "b b b"
+            "c c c";</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">grid-row: auto/auto;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Указывает положение элемента в сетке. Т.е. размещает элемент в указанную ячейку. Указывать нужно имя или номер линии к которой относится ячейка и к которой нужно прикрепить элемент.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Specifies the position of the element in the grid. I.e. places the element in the specified cell. You need to specify the name or number of the line to which the cell belongs and to which you want to attach the element.</p>
+        </div>
+      </div>
+    </section>
+    <!-- grid-row : end -->
+    <hr>
+    <!-- grid-column -->
+    <section class="section">
+      <div id="grid-column" class="section__wrap-title">
+        <h2 class="section__title">grid-column</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-column" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-column</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-column">1</button>
+        <button class="section__control" type="button" data-flex="grid-column">2</button>
+        <button class="section__control" type="button" data-flex="grid-column">1/4</button>
+        <button class="section__control" type="button" data-flex="grid-column">2/4</button>
+        <button class="section__control" type="button" data-flex="grid-column">-1/-3</button>
+        <button class="section__control" type="button" data-flex="grid-column">span 2/-1</button>
+        <button class="section__control" type="button" data-flex="grid-column">1/span 2</button>
+        <button class="section__control" type="button" data-flex="grid-column">a-start/b-end</button>
+        <button class="section__control" type="button" data-flex="grid-column">a-start/c-end</button>
+        <button class="section__control" type="button" data-flex="grid-column">b-start/c-end</button>
+        <button class="section__control" type="button" data-flex="grid-column">aside-begin/main-end</button>
+        <button class="section__control" type="button" data-flex="grid-column">aside-begin/aside2-end</button>
+        <button class="section__control" type="button" data-flex="grid-column">main-begin/aside2-end</button>
+        <button class="section__control" type="button" data-flex="grid-column">auto/auto</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-column">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template-columns: [aside-begin] 1fr [aside-end main-begin] 1fr [main-end aside2-begin] 1fr [aside2-end];</div>
+          <div class="section__prop">grid-template-rows: repeat(3, 1fr);</div>
+          <div class="section__prop">grid-template-areas:
+            "a b c"
+            "a b c"
+            "a b c";</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">grid-column: 1;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Указывает положение элемента в сетке. Т.е. размещает элемент в указанную ячейку. Указывать нужно имя или номер линии к которой относится ячейка и к которой нужно прикрепить элемент.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Specifies the position of the element in the grid. I.e. places the element in the specified cell. You need to specify the name or number of the line to which the cell belongs and to which you want to attach the element.</p>
+        </div>
+      </div>
+    </section>
+    <!-- grid-column : end -->
+    <hr>
+    <!-- grid-area -->
+    <section class="section">
+      <div id="grid-area" class="section__wrap-title">
+        <h2 class="section__title">grid-area</h2>
+        <a href="https://www.w3.org/TR/css-grid-1/#propdef-grid-area" class="section__link-title" target="_blank">https://www.w3.org/TR/css-grid-1/#propdef-grid-area</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="grid-area">1</button>
+        <button class="section__control" type="button" data-flex="grid-area">2/2</button>
+        <button class="section__control" type="button" data-flex="grid-area">1/2/3/4</button>
+        <button class="section__control" type="button" data-flex="grid-area">a</button>
+        <button class="section__control" type="button" data-flex="grid-area">b</button>
+        <button class="section__control" type="button" data-flex="grid-area">c</button>
+        <button class="section__control" type="button" data-flex="grid-area">d</button>
+        <button class="section__control" type="button" data-flex="grid-area">b-start</button>
+        <button class="section__control" type="button" data-flex="grid-area">b-start/main-begin</button>
+        <button class="section__control" type="button" data-flex="grid-area">b-start/main-begin/c-end</button>
+        <button class="section__control" type="button" data-flex="grid-area">b-start/main-begin/c-end/d-end</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--grid-area">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop"> grid-template-columns: [aside-begin] 1fr [aside-end main-begin] 1fr [main-end aside2-begin] 1fr [aside2-end];</div>
+          <div class="section__prop">grid-template-rows: repeat(3, 1fr);</div>
+          <div class="section__prop">grid-template-areas:
+            "a a d"
+            "b b d"
+            "c c d";</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">grid-area: 1;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Дает элементу имя. По имени элемент будет относиться к области указанной в свойстве grid-template-areas:. Или в значении можно указать номер/имя линий.</p>
+          <p><strong>Применяется : </strong>элементы сетки и полям с абсолютным расположением, содержащий блок которых является контейнером сетки.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>If four grid-line values are specified, grid-row-start is set to the first value, grid-column-start is set to the second value, grid-row-end is set to the third value, and grid-column-end is set to the fourth value.</p>
+          <p>When grid-column-end is omitted, if grid-column-start is a custom-ident, grid-column-end is set to that custom-ident otherwise, it is set to auto.</p>
+          <p>When grid-row-end is omitted, if grid-row-start is a custom-ident, grid-row-end is set to that custom-ident; otherwise, it is set to auto.</p>
+          <p>When grid-column-start is omitted, if grid-row-start is a custom-ident, all four longhands are set to that value. Otherwise, it is set to auto.</p>
+          <p><strong>Applies to: </strong>grid items and absolutely-positioned boxes whose containing block is a grid container.</p>
+          <p><strong>Initial: </strong>see individual properties.</p>
+        </div>
+      </div>
+    </section>
+    <!-- grid-area : end -->
+    <hr>
+    <!-- justify-self -->
+    <section class="section">
+      <div id="justify-self" class="section__wrap-title">
+        <h2 class="section__title">justify-self</h2>
+        <a href="https://www.w3.org/TR/css-align-3/#justify-self-property" class="section__link-title" target="_blank">https://www.w3.org/TR/css-align-3/#justify-self-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="justify-self">start</button>
+        <button class="section__control" type="button" data-flex="justify-self">end</button>
+        <button class="section__control" type="button" data-flex="justify-self">center</button>
+        <button class="section__control" type="button" data-flex="justify-self">stretch</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--justify-self">
+          <div class="section__parent">
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">justify-self: start;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Выравнивает содержимое элемента вдоль оси строки (в отличии от align-self, который выравнивает вдоль оси столбца).</p>
+          <p><strong>Применяется к : </strong>содержимому внутри отдельного элемента.</p>
+          <p><strong>Значение по умолчанию: </strong>auto</p>
+          <dl>
+            <dt>start</dt>
+            <dd>Выравнивает содержимое по левой части области.</dd>
+            <dt>end</dt>
+            <dd>Выравнивает содержимое по правой части области.</dd>
+            <dt>center</dt>
+            <dd>Выравнивает содержимое по центру области.</dd>
+            <dt>stretch</dt>
+            <dd>Заполняет всю ширину области (по умолчанию).</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Aligns the contents of the element along the row axis (unlike align-self, which aligns along the column axis).</p>
+          <p><strong>Applies to: </strong>the content inside a separate element.</p>
+          <p><strong>Initial: </strong>auto.</p>
+        </div>
+      </div>
+    </section>
+    <!-- justify-self : end -->
+    <hr>
+    <!-- justify-items -->
+    <section class="section">
+      <div id="justify-items" class="section__wrap-title">
+        <h2 class="section__title">justify-items</h2>
+        <a href="https://www.w3.org/TR/css-align-3/#justify-items-property" class="section__link-title" target="_blank">https://www.w3.org/TR/css-align-3/#justify-items-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="justify-items">start</button>
+        <button class="section__control" type="button" data-flex="justify-items">end</button>
+        <button class="section__control" type="button" data-flex="justify-items">center</button>
+        <button class="section__control" type="button" data-flex="justify-items">stretch</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--justify-items">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop"><mark class="section__mark">justify-items: start;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Выравнивает содержимое вдоль оси строки (в отличии от align-items который выравнивает элементы вдоль оси столбца). Это значение применяется ко всем элементам сетки внутри контейнера.</p>
+          <p><strong>Применяется ко : </strong>всем элементам.</p>
+          <p><strong>Значение по умолчанию: </strong>legacy</p>
+          <dl>
+            <dt>start</dt>
+            <dd>Выравнивает содержимое по левой стороне области.</dd>
+            <dt>end</dt>
+            <dd>Выравнивает содержимое по правой стороне области.</dd>
+            <dt>center</dt>
+            <dd>Выравнивает содержимое по центру области.</dd>
+            <dt>stretch</dt>
+            <dd>Заполняет всю ширину области (по умолчанию).</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Aligns content along the row axis (unlike align-items which aligns items along the column axis). This value applies to all grid elements inside the container.</p>
+          <p><strong>Applies to: </strong>all elements.</p>
+          <p><strong>Initial: </strong>auto.</p>
+          <dl>
+            <dt>start</dt>
+            <dd>Aligns the content to the left side of the area.</dd>
+            <dt>end</dt>
+            <dd>Aligns the content to the right side of the area.</dd>
+            <dt>center</dt>
+            <dd>Aligns the content to the center of the area.</dd>
+            <dt>stretch</dt>
+            <dd>Fills the entire width of the area (by default).</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- justify-items : end -->
+    <hr>
+    <!-- align-self -->
+    <section class="section">
+      <div id="align-self" class="section__wrap-title">
+        <h2 class="section__title">align-self</h2>
+        <a href="https://www.w3.org/TR/css-align-3/#align-self-property" class="section__link-title" target="_blank">https://www.w3.org/TR/css-align-3/#align-self-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="align-self">start</button>
+        <button class="section__control" type="button" data-flex="align-self">end</button>
+        <button class="section__control" type="button" data-flex="align-self">center</button>
+        <button class="section__control" type="button" data-flex="align-self">stretch</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--align-self">
+          <div class="section__parent">
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">align-self: start;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Выравнивает содержимое элемента вдоль оси столбца (в отличии от justify-self, который выравнивает вдоль оси строки).</p>
+          <p><strong>Применяется ко : </strong>содержимому внутри отдельного элемента.</p>
+          <p><strong>Значение по умолчанию: </strong>auto</p>
+          <dl>
+            <dt>start</dt>
+            <dd>Выравнивает содержимое по верхней части области.</dd>
+            <dt>end</dt>
+            <dd>Выравнивает содержимое по нижней части области.</dd>
+            <dt>center</dt>
+            <dd>Выравнивает содержимое по центру области.</dd>
+            <dt>stretch</dt>
+            <dd>Заполняет всю высоту области (по умолчанию).</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Aligns the contents of the element along the column axis (unlike justify-self, which aligns along the row axis).</p>
+          <p><strong>Applies to: </strong>the content inside a separate element.</p>
+          <p><strong>Initial: </strong>auto.</p>
+          <dl>
+            <dt>start</dt>
+            <dd>Aligns the content to the top of the area.</dd>
+            <dt>end</dt>
+            <dd>Aligns the content to the bottom of the area.</dd>
+            <dt>center</dt>
+            <dd>Aligns the content to the center of the area.</dd>
+            <dt>stretch</dt>
+            <dd>Fills the entire height of the area (by default).</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- align-self : end -->
+    <hr>
+    <!-- align-items -->
+    <section class="section">
+      <div id="align-items" class="section__wrap-title">
+        <h2 class="section__title">align-items</h2>
+        <a href="https://www.w3.org/TR/css-align-3/#align-items-property" class="section__link-title" target="_blank">https://www.w3.org/TR/css-align-3/#align-items-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="align-items">start</button>
+        <button class="section__control" type="button" data-flex="align-items">end</button>
+        <button class="section__control" type="button" data-flex="align-items">center</button>
+        <button class="section__control" type="button" data-flex="align-items">stretch</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--align-items">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop"><mark class="section__mark">align-items: start;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Выравнивает содержимое вдоль оси столбца (в отличии от justify-items который выравнивает элементы вдоль оси строки). Это значение применяется ко всем элементам сетки внутри контейнера.</p>
+          <p><strong>Применяется ко : </strong>всем элементам.</p>
+          <p><strong>Значение по умолчанию: </strong>normal</p>
+          <dl>
+            <dt>start</dt>
+            <dd>Выравнивание элементов по верхней части области.</dd>
+            <dt>end</dt>
+            <dd>Выравнивание элементов по нижней части области.</dd>
+            <dt>center</dt>
+            <dd>Выравнивание элементов по центру области.</dd>
+            <dt>stretch</dt>
+            <dd>Заполняет всю высоту области (по умолчанию).</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Aligns content along the column axis (unlike justify-items which aligns items along the row axis). This value applies to all grid elements inside the container.</p>
+          <p><strong>Applies to: </strong>all elements.</p>
+          <p><strong>Initial: </strong>normal.</p>
+          <dl>
+            <dt>start</dt>
+            <dd>Alignment of elements along the top of the area..</dd>
+            <dt>end</dt>
+            <dd>Alignment of elements at the bottom of the area.</dd>
+            <dt>center</dt>
+            <dd>Alignment of elements in the center of the area.</dd>
+            <dt>stretch</dt>
+            <dd>Fills the entire height of the area (by default).</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- align-items : end -->
+    <hr>
+    <!-- justify-content -->
+    <section class="section">
+      <div id="justify-content" class="section__wrap-title">
+        <h2 class="section__title">justify-content</h2>
+        <a href="https://www.w3.org/TR/css-align-3/#propdef-justify-content" class="section__link-title" target="_blank">https://www.w3.org/TR/css-align-3/#propdef-justify-content</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="justify-content">start</button>
+        <button class="section__control" type="button" data-flex="justify-content">end</button>
+        <button class="section__control" type="button" data-flex="justify-content">center</button>
+        <button class="section__control" type="button" data-flex="justify-content">stretch</button>
+        <button class="section__control" type="button" data-flex="justify-content">space-between</button>
+        <button class="section__control" type="button" data-flex="justify-content">space-around</button>
+        <button class="section__control" type="button" data-flex="justify-content">space-evenly</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--justify-content">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop"><mark class="section__mark">justify-content: start;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Это свойство выравнивает сетку вдоль оси строки (в отличии от свойства align-content, которое выравнивает сетку вдоль оси столбца)</p>
+          <p><strong>Применяется к : </strong>block контейнерам, flex контейнерам и grid контейнерам.</p>
+          <p><strong>Значение по умолчанию: </strong>normal</p>
+          <dl>
+            <dt>start</dt>
+            <dd>выравнивает сетку по левой стороне контейнера.</dd>
+            <dt>end</dt>
+            <dd>выравнивает сетку по правой стороне контейнера.</dd>
+            <dt>center</dt>
+            <dd>выравнивает сетку по центру контейнера.</dd>
+            <dt>stretch</dt>
+            <dd>масштабирует элементы чтобы сетка могла заполнить всю ширину контейнера.</dd>
+            <dt>space-around</dt>
+            <dd>одинаковое пространство между элементами, и полу-размерные отступы по краям.</dd>
+            <dt>space-between</dt>
+            <dd>одинаковое пространство между элементами, без отступов по краям.</dd>
+            <dt>space-evenly</dt>
+            <dd>одинаковое пространство между элементами, и полноразмерные отступы по краям.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>This property aligns the grid along the row axis (unlike the align-content property, which aligns the grid along the column axis)</p>
+          <p><strong>Applies to: </strong>block containers, flex containers and grid containers.</p>
+          <p><strong>Initial: </strong>normal.</p>
+          <dl>
+            <dt>start</dt>
+            <dd>aligns the grid to the left side of the container.</dd>
+            <dt>end</dt>
+            <dd>aligns the grid to the right side of the container.</dd>
+            <dt>center</dt>
+            <dd>aligns the grid to the center of the container.</dd>
+            <dt>stretch</dt>
+            <dd>scales the elements so that the grid can fill the entire width of the container.</dd>
+            <dt>space-around</dt>
+            <dd>the same space between the elements, and half-sized margins at the edges.</dd>
+            <dt>space-between</dt>
+            <dd>the same space between the elements, without margins at the edges.</dd>
+            <dt>space-evenly</dt>
+            <dd>the same space between the elements, and full-size margins at the edges.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- justify-content : end -->
+    <hr>
+    <!-- align-content -->
+    <section class="section">
+      <div id="align-content" class="section__wrap-title">
+        <h2 class="section__title">align-content</h2>
+        <a href="https://www.w3.org/TR/css-align-3/#propdef-align-content" class="section__link-title" target="_blank">https://www.w3.org/TR/css-align-3/#propdef-align-content</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="align-content">start</button>
+        <button class="section__control" type="button" data-flex="align-content">end</button>
+        <button class="section__control" type="button" data-flex="align-content">center</button>
+        <button class="section__control" type="button" data-flex="align-content">stretch</button>
+        <button class="section__control" type="button" data-flex="align-content">space-around</button>
+        <button class="section__control" type="button" data-flex="align-content">space-between</button>
+        <button class="section__control" type="button" data-flex="align-content">space-evenly</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--align-content">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop"><mark class="section__mark">align-content: start;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Это свойство выравнивает сетку вдоль оси колонки (в отличии от свойства justify-content, которое выравнивает сетку вдоль оси строки).</p>
+          <p><strong>Применяется к : </strong>block контейнерам, flex контейнерам и grid контейнерам.</p>
+          <p><strong>Значение по умолчанию: </strong>normal</p>
+          <dl>
+            <dt>start</dt>
+            <dd>выравнивает сетку по верхней части контейнера.</dd>
+            <dt>end</dt>
+            <dd>выравнивает сетку по нижней части контейнера.</dd>
+            <dt>center</dt>
+            <dd>масштабирует элементы чтобы сетка могла заполнить всю высоту контейнера.</dd>
+            <dt>space-around</dt>
+            <dd>одинаковое пространство между элементами, и полу-размерные отступы по краям.</dd>
+            <dt>space-between</dt>
+            <dd>одинаковое пространство между элементами, без отступов по краям.</dd>
+            <dt>space-evenly</dt>
+            <dd>одинаковое пространство между элементами, и полноразмерные отступы по краям.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>This property aligns the grid along the column axis (unlike the justify-content property, which aligns the grid along the row axis).</p>
+          <p><strong>Applies to: </strong>block containers, flex containers and grid containers.</p>
+          <p><strong>Initial: </strong>normal.</p>
+          <dl>
+            <dt>start</dt>
+            <dd>aligns the grid to the top of the container.</dd>
+            <dt>end</dt>
+            <dd>aligns the grid to the bottom of the container.</dd>
+            <dt>center</dt>
+            <dd>scales the elements so that the grid can fill the entire height of the container.</dd>
+            <dt>space-around</dt>
+            <dd>the same space between the elements, and half-sized margins at the edges.</dd>
+            <dt>space-between</dt>
+            <dd>the same space between the elements, without margins at the edges.</dd>
+            <dt>space-evenly</dt>
+            <dd>the same space between the elements, and full-size margins at the edges.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- align-content : end -->
+    <hr>
+    <!-- row-gap -->
+    <section class="section">
+      <div id="row-gap" class="section__wrap-title">
+        <h2 class="section__title">row-gap</h2>
+        <a href="https://www.w3.org/TR/css-align-3/#propdef-row-gap" class="section__link-title" target="_blank">https://www.w3.org/TR/css-align-3/#propdef-row-gap</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="row-gap">50px</button>
+        <button class="section__control" type="button" data-flex="row-gap">10%</button>
+        <button class="section__control" type="button" data-flex="row-gap">normal</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--row-gap">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop"><mark class="section__mark">row-gap: 50px;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>В то время как поля и отступы могут использоваться для указания визуального расстояния между отдельными полями, иногда удобнее указывать расстояние между соседними полями в глобальном масштабе в рамках данного контекста макета, особенно когда расстояние между полями отличается, в отличие от расстояния между первым / последним полем и краем контейнера.</p>
+          <p>Свойство gap и его вложенные свойства row-gap и column-gap предоставляют эту функциональность для многостолбцового, гибкого и сетчатого макета.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>While margin and padding can be used to specify visual spacing around individual boxes, it’s sometimes more convenient to globally specify spacing between adjacent boxes within a given layout context, particularly when the spacing is different between boxes as opposed to between the first/last box and the container’s edge.</p>
+          <p>The gap property, and its row-gap and column-gap sub-properties, provide this functionality for multi-column, flex, and grid layout.</p>
+        </div>
+      </div>
+    </section>
+    <!-- row-gap : end -->
+    <hr>
+    <!-- column-gap -->
+    <section class="section">
+      <div id="column-gap" class="section__wrap-title">
+        <h2 class="section__title">column-gap</h2>
+        <a href="https://www.w3.org/TR/css-align-3/#propdef-column-gap" class="section__link-title" target="_blank">https://www.w3.org/TR/css-align-3/#propdef-column-gap</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="column-gap">100px</button>
+        <button class="section__control" type="button" data-flex="column-gap">50%</button>
+        <button class="section__control" type="button" data-flex="column-gap">normal</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--column-gap">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template: 1fr 1fr/ 1fr 1fr;</div>
+          <div class="section__prop"><mark class="section__mark">column-gap: 100px;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>В то время как поля и отступы могут использоваться для указания визуального расстояния между отдельными полями, иногда удобнее указывать расстояние между соседними полями в глобальном масштабе в рамках данного контекста макета, особенно когда расстояние между полями отличается, в отличие от расстояния между первым / последним полем и краем контейнера.</p>
+          <p>Свойство gap и его вложенные свойства row-gap и column-gap предоставляют эту функциональность для многостолбцового, гибкого и сетчатого макета.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>While margin and padding can be used to specify visual spacing around individual boxes, it’s sometimes more convenient to globally specify spacing between adjacent boxes within a given layout context, particularly when the spacing is different between boxes as opposed to between the first/last box and the container’s edge.</p>
+          <p>The gap property, and its row-gap and column-gap sub-properties, provide this functionality for multi-column, flex, and grid layout.</p>
+        </div>
+      </div>
+    </section>
+    <!-- column-gap : end -->
+    <hr>
+    <!-- gap -->
+    <section class="section">
+      <div id="gap" class="section__wrap-title">
+        <h2 class="section__title">gap</h2>
+        <a href="https://www.w3.org/TR/css-align-3/#propdef-gap" class="section__link-title" target="_blank">https://www.w3.org/TR/css-align-3/#propdef-gap</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="gap">20px</button>
+        <button class="section__control" type="button" data-flex="gap">150px 20px</button>
+        <button class="section__control" type="button" data-flex="gap">10%</button>
+        <button class="section__control" type="button" data-flex="gap">normal</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view g--gap">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: grid;</div>
+          <div class="section__prop">grid-template: 1fr 1fr/ 1fr 1fr;</div>
+          <div class="section__prop"><mark class="section__mark">gap: 20px;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Это свойство является сокращением, которое устанавливает разрыв между строками и столбцами в одном объявлении. Если параметр column-gap опущен, ему присваивается то же значение, что и параметру row-gap.</p>
+          <p>Примечание: Свойство gap - это только один компонент видимого “желоба” или “аллеи”, созданного между блоками. Поля, отступы или использование распределенного выравнивания могут увеличить видимое расстояние между полями сверх того, что указано в gap.</p>
+          <p><strong>Применяется к : </strong>многоколоночным, flex, grid контейнерам.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>This property is a shorthand that sets row-gap and column-gap in one declaration. If column-gap is omitted, it’s set to the same value as row-gap.</p>
+          <p>Note: The gap property is only one component of the visible “gutter” or “alley” created between boxes. Margins, padding, or the use of distributed alignment may increase the visible separation between boxes beyond what is specified in gap.</p>
+          <p><strong>Applies to: </strong>multi-column containers, flex containers, grid containers.</p>
+          <p><strong>Initial: </strong>see individual properties.</p>
+        </div>
+      </div>
+    </section>
+    <!-- gap : end -->
+  </div>
+  <!-- content : end -->
+</div>
+<!-- wrapper : end -->
+<script src="../js/app.min.js" type="text/javascript"></script>
+</body>
+</html>

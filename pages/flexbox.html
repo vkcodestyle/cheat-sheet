@@ -1,0 +1,1184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="flexbox, flex, cheatsheet, cheat sheet, documentation"/>
+  <meta name="theme-color" content="#e6ebe0"/>
+
+  <link rel="apple-touch-icon" href="../img/icon.png">
+  <!-- Main style -->
+  <link rel="stylesheet" type="text/css" href="../css/flexbox.min.css">
+  <title>Flexbox cheat sheet</title>
+</head>
+<body class="color-scheme-flexbox">
+<!-- wrapper -->
+<div class="wrapper">
+  
+  <!-- sidebar -->
+  <div class="sidebar">
+    <div class="sidebar__btn sidebar--angle-right">
+      <i class="fa fa-angle-right"></i>
+    </div>
+    
+    <div class="sidebar__menu">
+
+      <h3 class="sidebar__title">Flex container</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="#display" class="sidebar__link active">display</a>
+        </li>
+      </ul>
+
+      <h3 class="sidebar__title">Ordering & Orientation</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="#flex-direction" class="sidebar__link">flex-direction</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#flex-wrap" class="sidebar__link">flex-wrap</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#flex-flow" class="sidebar__link">flex-flow</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#order" class="sidebar__link">order</a>
+        </li>
+      </ul>
+
+      <h3 class="sidebar__title">Alignment</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="#justify-content" class="sidebar__link">justify-content</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#align-items" class="sidebar__link">align-items</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#align-self" class="sidebar__link">align-self</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#align-content" class="sidebar__link">align-content</a>
+        </li>
+      </ul>
+
+      <h3 class="sidebar__title">Flexibility</h3>
+      <ul class="sidebar__list">
+        <li class="sidebar__item">
+          <a href="#flex-grow" class="sidebar__link">flex-grow</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#flex-shrink" class="sidebar__link">flex-shrink</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#flex-basis" class="sidebar__link">flex-basis</a>
+        </li>
+        <li class="sidebar__item">
+          <a href="#flex" class="sidebar__link">flex values</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  <!-- sidebar : end -->
+
+  <!-- content -->
+  <div class="content">
+    <ul class="content__menu">
+      <li class="content__item"><a href="../index.html" class="content__link">Home</a></li>
+      <li class="content__item"><a href="../pages/flexbox.html" class="content__link active">Flexbox</a></li>
+      <li class="content__item"><a href="../pages/grid.html" class="content__link">Grid css</a></li>
+      <li class="content__item"><a href="../pages/git.html" class="content__link">Github</a></li>
+    </ul>
+    <!-- display -->
+    <section class="section">
+      <div id="display" class="section__wrap-title">
+        <h2 class="section__title">display</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#flex-containers" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#flex-containers</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="display">flex</button>
+        <button class="section__control" type="button" data-flex="display">inline-flex</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--display">
+          Some text
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop"><mark class="section__mark">display: flex;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Многоцелевое свойство, которое определяет, как элемент должен быть показан в документе.</p>
+          <p><strong>Применяется ко: </strong>всем элементам.</p>
+          <dl>
+            <dt>flex</dt>
+            <dd>Элемент растягивается на всю ширину и имеет свое полное пространство среди окружающих блоков. Происходит перенос строк в начале и в конце блока.</dd>
+            <dt>inline-flex</dt>
+            <dd>Элемент обтекается другими элементами. При этом его внутренняя часть форматируется как блочный элемент, а сам элемент — как встроенный.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>A <a class="section__tab-link" href="https://www.w3.org/TR/css-flexbox-1/#flex-container" target="_blank">flex container</a> establishes a new flex formatting context for its contents. This is the same as establishing a block formatting context, except that flex layout is used instead of block layout. For example, floats do not intrude into the flex container, and the flex container’s margins do not collapse with the margins of its contents. Flex containers form a containing block for their contents
+            <a class="section__tab-link" href="https://www.w3.org/TR/CSS2/visudet.html#containing-block-details" target="_blank">exactly like block containers do.</a> The overflow property applies to flex containers.</p>
+
+          <p>Flex containers are not block containers, and so some properties that were designed with the assumption of block layout don’t apply in the context of flex layout. In particular: If an element’s specified display is inline-flex, then its display property computes to flex in certain circumstances: the table in
+            <a class="section__tab-link" href="https://www.w3.org/TR/CSS2/visuren.html#dis-pos-flo" target="_blank">CSS 2.1 Section 9.7</a> is amended to contain an additional row, with inline-flex in the ‘Specified Value’ column and flex in the ‘Computed Value’ column.</p>
+          <p><strong>Applies to</strong>: all elements.</p>
+          <dl>
+            <dt>flex</dt>
+            <dd>This value causes an element to generate a block-level flex container box.</dd>
+            <dt>inline-flex</dt>
+            <dd>This value causes an element to generate an inline-level flex container box.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- display : end -->
+    <hr>
+    <!-- flex-direction -->
+    <section class="section">
+      <div id="flex-direction" class="section__wrap-title">
+        <h2 class="section__title">flex-direction</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#flex-direction-property" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#flex-direction-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="flex-direction">row</button>
+        <button class="section__control" type="button" data-flex="flex-direction">row-reverse</button>
+        <button class="section__control" type="button" data-flex="flex-direction">column</button>
+        <button class="section__control" type="button" data-flex="flex-direction">column-reverse</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--flex-direction">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop"><mark class="section__mark">flex-direction: row</mark></div>
+          <div class="section__prop">height: 100%</div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство flex-direction задаёт направление основных осей в контейнере и тем самым определяет положение флексов в контейнере. На само направление также влияет значение атрибута dir у контейнера.</p>
+          <p><strong>Применяется к: </strong>Flex контейнерам.</p>
+          <dl>
+            <dt>row</dt>
+            <dd>Главная ось направлена так же, как и ориентация текста, по умолчанию слева направо. Если значение dir задано как rtl, то направление оси идёт справа налево.</dd>
+            <dt>row-reverse</dt>
+            <dd>Похоже на значение row, но меняются местами начальная и конечная точки и главная ось направлена справа налево. Если значение dir задано как rtl, то направление оси идёт слева направо.</dd>
+            <dt>column</dt>
+            <dd>Главная ось располагается вертикально и направлена сверху вниз.</dd>
+            <dt>column-reverse</dt>
+            <dd>Главная ось располагается вертикально, но меняется положение начальной и конечной точек и ось направлена снизу вверх.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The flex-direction property specifies how flex items are placed in the flex container, by setting the direction of the flex container’s main axis. This determines the direction in which flex items are laid out.</p>
+          <p>Note: The reverse values do not reverse box ordering: like <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-4/#writing-mode" target="_blank">writing-mode</a> and
+            <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#propdef-direction" target="_blank">direction</a>, they only change the direction of flow. Painting order, speech order, and sequential navigation orders are not affected.</p>
+          <p><strong>Applies to</strong>: all elements.</p>
+          <dl>
+            <dt>row</dt>
+            <dd>The flex container’s main axis has the same orientation as the <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#inline-axis" target="_blank">inline axis</a> of the current
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#writing-mode" target="_blank">writing mode.</a> The main-start and main-end directions are equivalent to the
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#inline-start" target="_blank">inline-start</a> and
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#inline-end" target="_blank">inline-end</a> directions, respectively, of the current
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#writing-mode" target="_blank">writing mode.</a></dd>
+            <dt>row-reverse</dt>
+            <dd>Same as row, except the main-start and main-end directions are swapped.</dd>
+            <dt>column</dt>
+            <dd>The flex container’s main axis has the same orientation as the <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#block-axis" target="_blank">block axis</a> of the current
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#writing-mode" target="_blank">writing mode.</a> The main-start and main-end directions are equivalent to the
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#block-start" target="_blank">block-start</a> and
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#block-end" target="_blank">block-end</a> directions, respectively, of the current
+              <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#writing-mode" target="_blank">writing mode.</a></dd>
+            <dt>column-reverse</dt>
+            <dd>Same as column, except the main-start and main-end directions are swapped.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- flex-direction : end -->
+    <hr>
+    <!-- flex-wrap -->
+    <section class="section">
+      <div id="flex-wrap" class="section__wrap-title">
+        <h2 class="section__title">flex-wrap</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#flex-wrap-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="flex-wrap">nowrap</button>
+        <button class="section__control" type="button" data-flex="flex-wrap">wrap</button>
+        <button class="section__control" type="button" data-flex="flex-wrap">wrap-reverse</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--flex-wrap">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop">align-items: flex-start;</div>
+          <div class="section__prop"><mark class="section__mark">flex-wrap: nowrap;</mark></div>
+          <div class="section__prop">height: 100%</div>
+          }
+          <br>
+          <br>
+          .child {
+          <div class="section__prop">width: 40%;</div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство flex-wrap Указывает, следует ли флексам располагаться в одну строку или можно занять несколько строк. Если перенос строк допускается, то свойство также позволяет контролировать направление, в котором выкладываются строки.</p>
+          <p><strong>Применяется к: </strong>Flex контейнерам.</p>
+          <p><strong>Значение по умолчанию: </strong>nowrap.</p>
+          <dl>
+            <dt>nowrap</dt>
+            <dd>Флексы выстраиваются в одну линию.</dd>
+            <dt>wrap</dt>
+            <dd>Флексы выстраиваются в несколько строк, их направление задаётся свойством flex-direction.</dd>
+            <dt>wrap-reverse</dt>
+            <dd>Флексы выстраиваются в несколько строк, в направлении, противоположном flex-direction.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The flex-wrap property controls whether the flex container is single-line or multi-line, and the direction of the cross-axis, which determines the direction new lines are stacked in.</p>
+          <p>For the values that are not wrap-reverse, the cross-start direction is equivalent to either the <a class="section__tab-link"
+                                                                                                                href="https://www.w3.org/TR/css-writing-modes-3/#inline-start" target="_blank">inline-start</a> or <a class="section__tab-link" href="https://www.w3.org/TR/css-writing-modes-3/#block-start" target="_blank">block-start</a> direction of the current writing mode (whichever is in the cross axis) and the cross-end direction is the opposite direction of cross-start. When flex-wrap is wrap-reverse, the cross-start and cross-end directions are swapped.</p>
+          <p><strong>Applies to: </strong>flex containers.</p>
+          <p><strong>Initial: </strong>nowrap.</p>
+          <dl>
+            <dt>nowrap</dt>
+            <dd>The flex container is single-line.</dd>
+            <dt>wrap</dt>
+            <dd>The flex container is multi-line.</dd>
+            <dt>wrap-reverse</dt>
+            <dd>Same as wrap.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- flex-wrap : end -->
+    <hr>
+    <!-- flex-flow -->
+    <section class="section">
+      <div id="flex-flow" class="section__wrap-title">
+        <h2 class="section__title">flex-flow</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#flex-flow-property" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#flex-flow-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="flex-flow">row nowrap</button>
+        <button class="section__control" type="button" data-flex="flex-flow">column-reverse</button>
+        <button class="section__control" type="button" data-flex="flex-flow">column wrap</button>
+        <button class="section__control" type="button" data-flex="flex-flow">row-reverse wrap-reverse</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--flex-flow">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop">align-items: flex-start;</div>
+          <div class="section__prop"><mark class="section__mark">flex-wrap: nowrap;</mark></div>
+          <div class="section__prop">height: 100%</div>
+          }
+          <br>
+          <br>
+          .child {
+          <div class="section__prop">width: 40%;</div>
+          <div class="section__prop">height: 40%;</div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство flex-flow является сокращённым свойством для отдельных свойств flex-direction и flex-wrap.</p>
+          <p><strong>Применяется к: </strong>Flex контейнерам.</p>
+          <p><strong>Значение по умолчанию: </strong>row nowrap.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The flex-flow property is a shorthand for setting the flex-direction and flex-wrap properties, which together define the flex container’s main and cross axes.</p>
+          <p><strong>Applies to: </strong>flex containers.</p>
+          <p><strong>Initial: </strong>row nowrap.</p>
+        </div>
+      </div>
+    </section>
+    <!-- flex-flow : end -->
+    <hr>
+    <!-- order -->
+    <section class="section">
+      <div id="order" class="section__wrap-title">
+        <h2 class="section__title">order</h2>
+        <a href="https://www.w3.org/TR/css-flexbox-1/#order-property" class="section__link-title" target="_blank">https://www.w3.org/TR/css-flexbox-1/#order-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="order">-1</button>
+        <button class="section__control" type="button" data-flex="order">0</button>
+        <button class="section__control" type="button" data-flex="order">1</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--order">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop">align-items: flex-start;</div>
+          <div class="section__prop">height: 250px</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">order: -1</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство order определяет порядок вывода флексов внутри флекс-контейнера. Элементы располагаются согласно значениям свойства order от меньшего к большему. При равных значениях order элементы выводятся в том порядке, в каком они появляются в исходном коде.</p>
+          <p><strong>Применяется к: </strong>Flex элементам.</p>
+          <p><strong>Значение по умолчанию: </strong>0.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The order property controls the order in which children of a flex container appear within the flex container, by assigning them to ordinal groups. It takes a single
+            <a class="section__tab-link" href="https://www.w3.org/TR/css3-values/#integer-value" target="_blank">&lt;integer&gt;</a> value, which specifies which ordinal group the flex item belongs to.</p>
+          <p>A flex container lays out its content in order-modified document order, starting from the lowest numbered ordinal group and going up. Items with the same ordinal group are laid out in the order they appear in the source document. This also affects the
+            <a class="section__tab-link" href="https://www.w3.org/TR/CSS2/zindex.html" target="_blank">painting order</a>, exactly as if the flex items were reordered in the source document.</p>
+          <p><strong>Applies to: </strong>flex items.</p>
+          <p><strong>Initial: </strong>0.</p>
+        </div>
+      </div>
+    </section>
+    <!-- order : end -->
+    <hr>
+    <!-- justify-content -->
+    <section class="section">
+      <div id="justify-content" class="section__wrap-title">
+        <h2 class="section__title">justify-content</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#justify-content-property" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#justify-content-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="justify-content">flex-start</button>
+        <button class="section__control" type="button" data-flex="justify-content">flex-end</button>
+        <button class="section__control" type="button" data-flex="justify-content">center</button>
+        <button class="section__control" type="button" data-flex="justify-content">space-between</button>
+        <button class="section__control" type="button" data-flex="justify-content">space-around</button>
+        <button class="section__control" type="button" data-flex="justify-content">space-evenly</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--justify-content">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop"><mark class="section__mark">justify-content: flex-start;</mark></div>
+          <div class="section__prop">height: 250px</div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство justify-content определяет, как браузер распределяет пространство вокруг флекс-элементов вдоль главной оси контейнера. Это делается после того, как применяются размеры и автоматические отступы, за исключением ситуации, когда по крайней мере у одного элемента flex-grow больше нуля. При этом не остаётся никакого свободного пространства для манипулирования.</p>
+          <p><strong>Применяется к: </strong>flex контейнерам.</p>
+          <p><strong>Значение по умолчанию: </strong>flex-start.</p>
+          <dl>
+            <dt>flex-start</dt>
+            <dd>Флексы прижаты к началу строки.</dd>
+            <dt>flex-end</dt>
+            <dd>Флексы прижаты к концу строки.</dd>
+            <dt>center</dt>
+            <dd>Флексы выравниваются по центру строки.</dd>
+            <dt>space-between</dt>
+            <dd>Крайние элементы прижимаются к краям (место между элементами распределяется равномерно)</dd>
+            <dt>space-around</dt>
+            <dd>Флексы равномерно распределяются по всей строке. Пустое пространство перед первым и после последнего элементов равно половине пространства между двумя соседними элементами.</dd>
+            <dt>space-evenly</dt>
+            <dd>Флексы распределяются так, что расстояние между любыми двумя соседними элементами, а также перед первым и после последнего, было одинаковым.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The justify-content property aligns flex items along the main axis of the current line of the flex container. This is done after any flexible lengths and any auto margins have been resolved. Typically it helps distribute extra free space leftover when either all the flex items on a line are inflexible, or are flexible but have reached their maximum size. It also exerts some control over the alignment of items when they overflow the line.</p>
+          <p><strong>Applies to: </strong>flex containers</p>
+          <p><strong>Initial: </strong>flex-start</p>
+          <dl>
+            <dt>flex-start</dt>
+            <dd>Flex items are packed toward the start of the line. The main-start margin edge of the first flex item on the line is placed flush with the main-start edge of the line, and each subsequent flex item is placed flush with the preceding item.</dd>
+            <dt>flex-end</dt>
+            <dd>Flex items are packed toward the end of the line. The main-end margin edge of the last flex item is placed flush with the main-end edge of the line, and each preceding flex item is placed flush with the subsequent item.</dd>
+            <dt>center</dt>
+            <dd>Flex items are packed toward the center of the line. The flex items on the line are placed flush with each other and aligned in the center of the line, with equal amounts of space between the main-start edge of the line and the first item on the line and between the main-end edge of the line and the last item on the line. (If the leftover free-space is negative, the flex items will overflow equally in both directions.)</dd>
+            <dt>space-between</dt>
+            <dd>Flex items are evenly distributed in the line. If the leftover free-space is negative or there is only a single flex item on the line, this value is identical to flex-start. Otherwise, the main-start margin edge of the first flex item on the line is placed flush with the main-start edge of the line, the main-end margin edge of the last flex item on the line is placed flush with the main-end edge of the line, and the remaining flex items on the line are distributed so that the spacing between any two adjacent items is the same.</dd>
+            <dt>space-around</dt>
+            <dd>Flex items are evenly distributed in the line, with half-size spaces on either end. If the leftover free-space is negative or there is only a single flex item on the line, this value is identical to center. Otherwise, the flex items on the line are distributed such that the spacing between any two adjacent flex items on the line is the same, and the spacing between the first/last flex items and the flex container edges is half the size of the spacing between flex items.</dd>
+            <dt>space-evenly</dt>
+            <dd>Flex items are evenly distributed in the line. If the leftover free-space is negative or there is only a single flex item on the line, this value is identical to center. Otherwise, the flex items on the line are distributed such that the spacing between each one is the same.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- justify-content : end -->
+    <hr>
+    <!-- align-items -->
+    <section class="section">
+      <div id="align-items" class="section__wrap-title">
+        <h2 class="section__title">align-items</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#propdef-align-items" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#propdef-align-items</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="align-items">flex-start</button>
+        <button class="section__control" type="button" data-flex="align-items">flex-end</button>
+        <button class="section__control" type="button" data-flex="align-items">center</button>
+        <button class="section__control" type="button" data-flex="align-items">baseline</button>
+        <button class="section__control" type="button" data-flex="align-items">stretch</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--align-items">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop"><mark class="section__mark">align-items: flex-start;</mark></div>
+          <div class="section__prop">height: 250px</div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство align-items выравнивает флекс-элементы внутри контейнера в перпендикулярном направлении.</p>
+          <p><strong>Применяется к: </strong>flex контейнерам.</p>
+          <p><strong>Значение по умолчанию: </strong>stretch.</p>
+          <dl>
+            <dt>flex-start</dt>
+            <dd>Флексы выравниваются в начале поперечной оси контейнера.</dd>
+            <dt>flex-end</dt>
+            <dd>Флексы выравниваются в конце поперечной оси контейнера.</dd>
+            <dt>center</dt>
+            <dd>Флексы выравниваются по линии поперечной оси.</dd>
+            <dt>baseline</dt>
+            <dd>Флексы выравниваются по их базовой линии.</dd>
+            <dt>stretch</dt>
+            <dd>Флексы растягиваются таким образом, чтобы занять всё доступное пространство контейнера.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Flex items can be aligned in the cross axis of the current line of the flex container, similar to justify-content but in the perpendicular direction. align-items sets the default alignment for all of the flex container’s items, including anonymous flex items. align-self allows this default alignment to be overridden for individual flex items. (For anonymous flex items, align-self always matches the value of align-items on their associated flex container.)</p>
+          <p>If either of the flex item’s cross-axis margins are align-self has no effect.</p>
+          <p>On absolutely positioned elements, a value of auto computes to itself. On all other elements, a value of auto for align-self computes to the value of align-items on the element’s parent, or stretch if the element has no parent. The alignments are defined as:</p>
+          <p><strong>Applies to: </strong>flex containers.</p>
+          <p><strong>initial: </strong>stretch.</p>
+          <dl>
+            <dt>flex-start</dt>
+            <dd>The cross-start margin edge of the flex item is placed flush with the cross-start edge of the line.</dd>
+            <dt>flex-end</dt>
+            <dd>The cross-end margin edge of the flex item is placed flush with the cross-end edge of the line.</dd>
+            <dt>center</dt>
+            <dd>The flex item’s margin box is centered in the cross axis within the line. (If the cross size of the flex line is less than that of the flex item, it will overflow equally in both directions.)</dd>
+            <dt>baseline</dt>
+            <dd>If the flex item’s inline axis is the same as the cross axis, this value is identical to flex-start. Otherwise, it participates in baseline alignment: all participating flex items on the line are aligned such that their baselines align, and the item with the largest distance between its baseline and its cross-start margin edge is placed flush against the cross-start edge of the line.</dd>
+            <dt>stretch</dt>
+            <dd>If the cross size property of the flex item computes to auto, and neither of the cross-axis margins are auto, the flex item is stretched. Its used value is the length necessary to make the cross size of the item’s margin box as close to the same size as the line as possible, while still respecting the constraints imposed by
+              <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-min-height" target="_blank">min-height</a>/<a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-min-width" target="_blank">min-width</a>/<a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-max-height" target="_blank">max-height</a>/<a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-max-width" target="_blank">max-width</a>. Note: If the flex container’s height is constrained this value may cause the contents of the flex item to overflow the item.The cross-start margin edge of the flex item is placed flush with the cross-start edge of the line.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- align-items : end -->
+    <hr>
+    <!-- align-self -->
+    <section class="section">
+      <div id="align-self" class="section__wrap-title">
+        <h2 class="section__title">align-self</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#propdef-align-self" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#propdef-align-self</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="align-self">flex-start</button>
+        <button class="section__control" type="button" data-flex="align-self">flex-end</button>
+        <button class="section__control" type="button" data-flex="align-self">center</button>
+        <button class="section__control" type="button" data-flex="align-self">baseline</button>
+        <button class="section__control" type="button" data-flex="align-self">stretch</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--align-self">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop">height: 250px</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">align-self: flex-start;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство align-self выравнивает флекс-элементы текущей строки, переписывая значение align-items.</p>
+          <p><strong>Применяется к: </strong>flex элементам.</p>
+          <p><strong>Значение по умолчанию: </strong>auto.</p>
+          <dl>
+            <dt>flex-start</dt>
+            <dd>Элемент выравнивается в начале поперечной оси контейнера.</dd>
+            <dt>flex-end</dt>
+            <dd>Элемент выравнивается в конце поперечной оси контейнера.</dd>
+            <dt>center</dt>
+            <dd>Элемент выравнивается по центральной линии на поперечной оси.</dd>
+            <dt>baseline</dt>
+            <dd>Элемент выравнивается по базовой линии текста.</dd>
+            <dt>stretch</dt>
+            <dd>Элемент растягивается таким образом, чтобы занять всё свободное пространство контейнера по поперечной оси.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>Flex items can be aligned in the cross axis of the current line of the flex container, similar to justify-content but in the perpendicular direction. align-items sets the default alignment for all of the flex container’s items, including anonymous flex items. align-self allows this default alignment to be overridden for individual flex items. (For anonymous flex items, align-self always matches the value of align-items on their associated flex container.)</p>
+          <p>If either of the flex item’s cross-axis margins are align-self has no effect.</p>
+          <p>On absolutely positioned elements, a value of auto computes to itself. On all other elements, a value of auto for align-self computes to the value of align-items on the element’s parent, or stretch if the element has no parent. The alignments are defined as:</p>
+          <p><strong>Applies to: </strong>flex items.</p>
+          <p><strong>initial: </strong>auto.</p>
+          <dl>
+            <dt>flex-start</dt>
+            <dd>The cross-start margin edge of the flex item is placed flush with the cross-start edge of the line.</dd>
+            <dt>flex-end</dt>
+            <dd>The cross-end margin edge of the flex item is placed flush with the cross-end edge of the line.</dd>
+            <dt>center</dt>
+            <dd>The flex item’s margin box is centered in the cross axis within the line. (If the cross size of the flex line is less than that of the flex item, it will overflow equally in both directions.)</dd>
+            <dt>baseline</dt>
+            <dd>If the flex item’s inline axis is the same as the cross axis, this value is identical to flex-start. Otherwise, it participates in baseline alignment: all participating flex items on the line are aligned such that their baselines align, and the item with the largest distance between its baseline and its cross-start margin edge is placed flush against the cross-start edge of the line.</dd>
+            <dt>stretch</dt>
+            <dd>If the cross size property of the flex item computes to auto, and neither of the cross-axis margins are auto, the flex item is stretched. Its used value is the length necessary to make the cross size of the item’s margin box as close to the same size as the line as possible, while still respecting the constraints imposed by
+              <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-min-height" target="_blank">min-height</a> /
+              <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-min-width" target="_blank">min-width</a> /
+              <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-max-height" target="_blank">max-height</a> /
+              <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-max-width" target="_blank">max-width</a>. Note: If the flex container’s height is constrained this value may cause the contents of the flex item to overflow the item.The cross-start margin edge of the flex item is placed flush with the cross-start edge of the line.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- align-self : end -->
+    <hr>
+    <!-- align-content -->
+    <section class="section">
+      <div id="align-content" class="section__wrap-title">
+        <h2 class="section__title">align-content</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#align-content-property" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#align-content-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="align-content">flex-start</button>
+        <button class="section__control" type="button" data-flex="align-content">flex-end</button>
+        <button class="section__control" type="button" data-flex="align-content">center</button>
+        <button class="section__control" type="button" data-flex="align-content">space-between</button>
+        <button class="section__control" type="button" data-flex="align-content">space-around</button>
+        <button class="section__control" type="button" data-flex="align-content">space-evenly</button>
+        <button class="section__control" type="button" data-flex="align-content">stretch</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--align-content">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop">flex-wrap: wrap</div>
+          <div class="section__prop"><mark class="section__mark">align-content: flex-start;</mark></div>
+          <div class="section__prop">height: 250px</div>
+          }
+          <br>
+          <br>
+          .child {
+          <div class="section__prop">width: 40%</div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство align-content задаёт тип выравнивания строк внутри flex контейнера по поперечной оси при наличии свободного пространства.</p>
+          <p><strong>Применяется к: </strong>flex контейнеру.</p>
+          <p><strong>Значение по умолчанию: </strong>stretch.</p>
+          <dl>
+            <dt>flex-start</dt>
+            <dd>Строки располагаются в начале поперечной оси. Каждая следующая строка идёт вровень с предыдущей.</dd>
+            <dt>flex-end</dt>
+            <dd>Строки располагаются начиная с конца поперечной оси. Каждая предыдущая строка идёт вровень со следующей.</dd>
+            <dt>center</dt>
+            <dd>Строки располагаются по центру контейнера.</dd>
+            <dt>space-between</dt>
+            <dd>Строки равномерно распределяются в контейнере и расстояние между ними одинаково.</dd>
+            <dt>space-around</dt>
+            <dd>Строки равномерно распределяются таким образом, чтобы пространство между двумя соседними строками было одинаковым. Пустое пространство перед первой строкой и после последней строки равно половине пространства между двумя соседними строками.</dd>
+            <dt>space-evenly</dt>
+            <dd>Строки распределяются равномерно. Пустое пространство перед первой строкой и после последней строки имеет ту же ширину, что и у других строк.</dd>
+            <dt>stretch</dt>
+            <dd>Строки равномерно растягиваются, заполняя свободное пространство.</dd>
+          </dl>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The align-content property aligns a flex container’s lines within the flex container when there is extra space in the cross-axis, similar to how justify-content aligns individual items within the main-axis. Note, this property has no effect on a single-line flex container. Values have the following meanings:</p>
+          <p>Note: Only multi-line flex containers ever have free space in the cross-axis for lines to be aligned in, because in a single-line flex container the sole line automatically stretches to fill the space.</p>
+          <p><strong>Applies to: </strong>flex containers.</p>
+          <p><strong>Initial: </strong>stretch.</p>
+          <dl>
+            <dt>flex-start</dt>
+            <dd>Lines are packed toward the start of the flex container. The cross-start edge of the first line in the flex container is placed flush with the cross-start edge of the flex container, and each subsequent line is placed flush with the preceding line.</dd>
+            <dt>flex-end</dt>
+            <dd>Lines are packed toward the end of the flex container. The cross-end edge of the last line is placed flush with the cross-end edge of the flex container, and each preceding line is placed flush with the subsequent line.</dd>
+            <dt>center</dt>
+            <dd>Lines are packed toward the center of the flex container. The lines in the flex container are placed flush with each other and aligned in the center of the flex container, with equal amounts of space between the cross-start content edge of the flex container and the first line in the flex container, and between the cross-end content edge of the flex container and the last line in the flex container. (If the leftover free-space is negative, the lines will overflow equally in both directions.)</dd>
+            <dt>space-between</dt>
+            <dd>Lines are evenly distributed in the flex container. If the leftover free-space is negative this value is identical to flex-start. Otherwise, the cross-start edge of the first line in the flex container is placed flush with the cross-start content edge of the flex container, the cross-end edge of the last line in the flex container is placed flush with the cross-end content edge of the flex container, and the remaining lines in the flex container are distributed so that the spacing between any two adjacent lines is the same.</dd>
+            <dt>space-around</dt>
+            <dd>Lines are evenly distributed in the flex container, with half-size spaces on either end. If the leftover free-space is negative this value is identical to center. Otherwise, the lines in the flex container are distributed such that the spacing between any two adjacent lines is the same, and the spacing between the first/last lines and the flex container edges is half the size of the spacing between flex lines.</dd>
+            <dt>space-evenly</dt>
+            <dd>Lines are evenly distributed in the flex container. If the leftover free-space is negative this value is identical to center. Otherwise, the lines in the flex container are distributed such that the spacing between every flex line is the same.</dd>
+            <dt>stretch</dt>
+            <dd>Lines stretch to take up the remaining space. If the leftover free-space is negative, this value is identical to flex-start. Otherwise, the free-space is split equally between all of the lines, increasing their cross size.</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+    <!-- align-content : end -->
+    <hr>
+    <!-- flex-grow -->
+    <section class="section">
+      <div id="flex-grow" class="section__wrap-title">
+        <h2 class="section__title">flex-grow</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#flex-grow-property" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#flex-grow-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="flex-grow">0</button>
+        <button class="section__control" type="button" data-flex="flex-grow">1</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--flex-grow">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop">height: 250px</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">flex-grow: 0;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство flex-grow задает коэффициент роста flex для заданного <a class="section__tab-link" href="https://www.w3.org/TR/css3-values/#number-value" target="_blank">числа</a>. Отрицательное значение не валидно.</p>
+          <p><strong>Применяется к: </strong>Flex элементам.</p>
+          <p><strong>Значение по умолчанию: </strong>0.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The flex-grow property sets the flex grow factor to the provided <a class="section__tab-link" href="https://www.w3.org/TR/css3-values/#number-value" target="_blank">&lt;number&gt;</a>. Negative numbers are invalid.</p>
+          <p><strong>Applies to: </strong>flex items.</p>
+          <p><strong>Initial: </strong>0.</p>
+        </div>
+      </div>
+    </section>
+    <!-- flex-grow : end -->
+    <hr>
+    <!-- flex-shrink -->
+    <section class="section">
+      <div id="flex-shrink" class="section__wrap-title">
+        <h2 class="section__title">flex-shrink</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#flex-shrink-property" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#flex-shrink-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control" type="button" data-flex="flex-shrink">0</button>
+        <button class="section__control active" type="button" data-flex="flex-shrink">1</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--flex-shrink">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop">height: 250px</div>
+          }
+          <br>
+          <br>
+          .child {
+          <div class="section__prop">width: 45%</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">flex-shrink: 1;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство flex-shrink задает коэффициент сжатия flex с заданным <a class="section__tab-link" href="https://www.w3.org/TR/css3-values/#number-value" target="_blank">числом</a>. Отрицательное значение не валидно.</p>
+          <p><strong>Применяется к: </strong>Flex элементам.</p>
+          <p><strong>Значение по умолчанию: </strong>1.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The flex-shrink property sets the flex shrink factor to the provided <a class="section__tab-link" href="https://www.w3.org/TR/css3-values/#number-value" target="_blank">&lt;number&gt;</a>. Negative numbers are invalid.</p>
+          <p><strong>Applies to: </strong>flex items.</p>
+          <p><strong>Initial: </strong>1.</p>
+        </div>
+      </div>
+    </section>
+    <!-- flex-shrink : end -->
+    <hr>
+    <!-- flex-basis -->
+    <section class="section">
+      <div id="flex-basis" class="section__wrap-title">
+        <h2 class="section__title">flex-basis</h2>
+        <a href="http://www.w3.org/TR/css-flexbox-1/#flex-basis-property" class="section__link-title" target="_blank">http://www.w3.org/TR/css-flexbox-1/#flex-basis-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="flex-basis">30%</button>
+        <button class="section__control" type="button" data-flex="flex-basis">50%</button>
+        <button class="section__control" type="button" data-flex="flex-basis">content</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--flex-basis">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop">flex-wrap: wrap;</div>
+          <div class="section__prop">height: 250px</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">flex-basis: 30%;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство flex-basis определяет основу флекса, которая является начальным размером элемента. Похоже на свойства
+            <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-width" target="_blank">width</a> и <a class="section__tab-link"
+                                                                                                                                 href="https://www.w3.org/TR/CSS22/visudet.html#propdef-height" target="_blank"> height</a>, к которым добавляется содержимое элемента.</p>
+          <p><strong>Применяется к: </strong>Flex элементам.</p>
+          <p><strong>Значение по умолчанию: </strong>auto.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The flex-basis property sets the flex basis. It accepts the same values as the <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-width" target="_blank">width</a> and
+            <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-height" target="_blank">height</a> property, plus content.</p>
+          <p>For all values other than auto and content (defined above), flex-basis is resolved the same way as width in horizontal writing modes, except that if a value would resolve to auto for
+            <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-width" target="_blank">width</a>, it instead resolves to content for lex-basis. For example, percentage values of flex-basis are resolved against the flex item’s containing block (i.e. its flex container); and if that containing block’s size is indefinite, the used value for flex-basis is content. As another corollary, flex-basis determines the size of the content box, unless otherwise specified such as by
+            <a class="section__tab-link" href="https://www.w3.org/TR/css3-ui/#propdef-box-sizing" target="_blank">box-sizing</a>.</p>
+          <p><strong>Applies to: </strong>flex items.</p>
+          <p><strong>Initial: </strong>auto.</p>
+        </div>
+      </div>
+    </section>
+    <!-- flex-basis : end -->
+    <hr>
+    <!-- flex-values -->
+    <section class="section">
+      <div id="flex" class="section__wrap-title">
+        <h2 class="section__title">flex-values</h2>
+        <a href="https://www.w3.org/TR/css-flexbox-1/#flex-property" class="section__link-title" target="_blank">https://www.w3.org/TR/css-flexbox-1/#flex-property</a>
+      </div>
+
+      <div class="section__controls">
+        <button class="section__control active" type="button" data-flex="flex">0 1 auto</button>
+        <button class="section__control" type="button" data-flex="flex">0 1 30%</button>
+        <button class="section__control" type="button" data-flex="flex">1 0 30%</button>
+        <button class="section__control" type="button" data-flex="flex">none</button>
+      </div>
+
+      <div class="section__demo">
+        <div class="section__view fb--flex-values">
+          <div class="section__parent">
+            <div class="section__child"></div>
+            <div class="section__child"></div>
+            <div class="section__child active"></div>
+            <div class="section__child"></div>
+          </div>
+        </div>
+
+        <div class="section__code">
+          .parent {
+          <div class="section__prop">display: flex;</div>
+          <div class="section__prop">height: 250px</div>
+          }
+          <br>
+          <br>
+          .child.active {
+          <div class="section__prop"><mark class="section__mark">flex: 0 1 auto;</mark></div>
+          }
+          <div class="section__copy">
+            <img class="section__img" src="../img/copy.svg" alt="copy" width="30" height="30">
+          </div>
+          <div class="section__copied">
+            <span>Copied!</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="section__tab">
+        <ul class="section__list">
+          <li class="section__item">
+            <a href="#" class="section__link active" data-tab="1">Русский</a>
+          </li>
+          <li class="section__item">|</li>
+          <li class="section__item">
+            <a href="#" class="section__link" data-tab="2">English</a>
+          </li>
+        </ul>
+
+        <div class="section__tab-panel active" data-tab="1">
+          <p>Свойство flex-basis определяет основу флекса, которая является начальным размером элемента. Похоже на свойства
+            <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-width" target="_blank">width</a> и <a class="section__tab-link"
+                                                                                                                                      href="https://www.w3.org/TR/CSS22/visudet.html#propdef-height" target="_blank"> height</a>, к которым добавляется содержимое элемента.</p>
+          <p><strong>Применяется к: </strong>Flex элементам.</p>
+          <p><strong>Значение по умолчанию: </strong>auto.</p>
+        </div>
+
+        <div class="section__tab-panel" data-tab="2">
+          <p>The flex-basis property sets the flex basis. It accepts the same values as the <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-width" target="_blank">width</a> and
+            <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-height" target="_blank">height</a> property, plus content.</p>
+          <p>For all values other than auto and content (defined above), flex-basis is resolved the same way as width in horizontal writing modes, except that if a value would resolve to auto for
+            <a class="section__tab-link" href="https://www.w3.org/TR/CSS22/visudet.html#propdef-width" target="_blank">width</a>, it instead resolves to content for lex-basis. For example, percentage values of flex-basis are resolved against the flex item’s containing block (i.e. its flex container); and if that containing block’s size is indefinite, the used value for flex-basis is content. As another corollary, flex-basis determines the size of the content box, unless otherwise specified such as by
+            <a class="section__tab-link" href="https://www.w3.org/TR/css3-ui/#propdef-box-sizing" target="_blank">box-sizing</a>.</p>
+          <p><strong>Applies to: </strong>flex items.</p>
+          <p><strong>Initial: </strong>auto.</p>
+        </div>
+      </div>
+    </section>
+    <!-- flex-values : end -->
+  </div>
+  <!-- content : end -->
+</div>
+<!-- wrapper : end -->
+<script src="../js/app.min.js" type="text/javascript"></script>
+</body>
+</html>
